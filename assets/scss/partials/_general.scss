@@ -1,0 +1,25 @@
+//General styles (ex: link styles, header styles, etc. )
+body {
+  color: $white;
+}
+
+section {
+  padding: $global-padding*2;
+}
+
+header {
+  padding-bottom: $global-padding*5;
+}
+
+section.top {
+  background-color: $blue;
+}
+
+section.middle {
+  background-color: $yellow;
+  color: $black;
+}
+
+section.bottom {
+  background-color: $black;
+}

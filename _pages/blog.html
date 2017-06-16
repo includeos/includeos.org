@@ -1,0 +1,31 @@
+---
+layout: static-page
+title: Blog
+permalink: /blog/
+---
+
+<section class="blog">
+
+  {% for post in site.posts %}
+    <div class="small-12 medium-6 large-6 columns">
+      <div>
+
+        <a href="{{ post.url | prepend: site.baseurl }}">
+
+          <span class="text-content">
+
+            {% for category in post.categories %}
+              <span>{{ category }}</span>
+            {% endfor %}
+
+            <h2 class="post-title">{{post.title}}
+            </h2>
+            <span>{{post.subtitle}}</span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  {% endfor %}
+
+</section>
