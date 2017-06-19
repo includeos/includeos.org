@@ -13,13 +13,64 @@ header {
 
 section.top {
   background-color: $blue;
+
+  ::selection {
+    background: $yellow;
+  }
 }
 
 section.middle {
   background-color: $yellow;
   color: $black;
+
+  ::selection {
+    background: $blue;
+  }
 }
 
 section.bottom {
   background-color: $black;
+
+  ::selection {
+    background: $yellow;
+  }
+}
+
+.list {
+  .row {
+    padding-bottom: $global-padding;
+  }
+}
+
+//Button Styles
+.hollow.button {
+  &.primary {
+    &:hover, &:focus {
+      border-color: $black;
+      color: $black;
+    }
+  }
+
+  &.secondary {
+    &:hover, &:focus {
+      background-color: $white;
+      border-color: $white;
+    }
+  }
+}
+
+//Link Styles
+a {
+  color: $black;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.read-more:after {
+  content: ">";
+  position: relative;
+  top: 1px;
+  left: 6px;
 }

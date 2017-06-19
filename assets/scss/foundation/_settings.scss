@@ -1,6 +1,40 @@
-$body-font-family: 'Open Sans', 'sans-serif';
-
-$black: #1A1A1B;
+//includeOS Variables
 $white: #FFFFFF;
+$black: #1A1A1B;
 $blue: #00ADDD;
 $yellow: #FCE76C;
+
+$global-margin: 1rem;
+$global-padding: 1rem;
+
+//Foundation 6 Variables
+$body-font-family: 'Open Sans', 'sans-serif';
+$buttongroup-spacing: $global-margin;
+$global-radius: 20px;
+
+$header-styles: (
+  'small': (
+    'h1': ('fs': 24),
+    'h2': ('fs': 20),
+    'h3': ('fs': 19),
+    'h4': ('fs': 18),
+    'h5': ('fs': 17),
+    'h6': ('fs': 16)
+  ),
+  'medium': (
+    'h1': ('fs': 30),
+    'h2': ('fs': 20),
+    'h3': ('fs': 18),
+    'h4': ('fs': 16),
+    'h5': ('fs': 14),
+    'h6': ('fs': 12)
+  )
+);
+
+$foundation-palette: (
+  primary: $white,
+  secondary: $black,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
