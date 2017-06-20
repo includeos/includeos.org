@@ -3,12 +3,12 @@ body {
   color: $white;
 }
 
-section {
-  padding: $global-padding*2;
+.container {
+  height: 100vh;
 }
 
-header {
-  padding-bottom: $global-padding*5;
+section {
+  padding: $global-padding;
 }
 
 section.top {
@@ -16,6 +16,14 @@ section.top {
 
   ::selection {
     background: $yellow;
+  }
+
+  h1 {
+    padding-bottom: $global-padding;
+  }
+
+  .button-group {
+    margin-bottom: $global-margin*2;
   }
 }
 
@@ -30,6 +38,7 @@ section.middle {
 
 section.bottom {
   background-color: $black;
+  height: 100%;
 
   ::selection {
     background: $yellow;
@@ -39,6 +48,10 @@ section.bottom {
 .list {
   .row {
     padding-bottom: $global-padding;
+  }
+
+  .icons {
+    padding-right: 0;
   }
 }
 
@@ -66,11 +79,29 @@ a {
   &:hover {
     color: $white;
   }
+
+  &.white {
+    color: $white;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &.read-more:after {
+    content: ">";
+    position: relative;
+    top: 1px;
+    left: 6px;
+  }
 }
 
-.read-more:after {
-  content: ">";
-  position: relative;
-  top: 1px;
-  left: 6px;
+
+
+@include breakpoint(small only) {
+  section.middle {
+    img {
+      width: 50%
+    }
+  }
 }

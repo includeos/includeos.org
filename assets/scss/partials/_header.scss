@@ -1,6 +1,10 @@
 header{
   background: $blue;
 
+  ::selection {
+    background: $yellow;
+  }
+
   .title-bar {
     background: $blue;
     width: 100%;
@@ -13,6 +17,14 @@ header{
 
   .row {
     padding: $global-padding;
+  }
+
+  .menu {
+    a {
+      &:not(:last-child) {
+        padding-right: $global-padding;
+      }
+    }
   }
 
   @include breakpoint(xlarge up){
