@@ -1,0 +1,24 @@
+header{
+  background: $blue;
+
+  .title-bar {
+    background: $blue;
+    width: 100%;
+    padding: 1.7rem;
+
+    .title-bar-right {
+      padding-top: .7rem;
+    }
+  }
+
+  .row {
+    padding: $global-padding;
+  }
+
+  @include breakpoint(xlarge up){
+    .row {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
