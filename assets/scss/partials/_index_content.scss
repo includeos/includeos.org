@@ -1,0 +1,52 @@
+//Top section (aka the blue section)
+section.top {
+  background-color: $blue;
+
+  ::selection {
+    background: $yellow;
+  }
+
+  h1 {
+    padding-bottom: $global-padding;
+  }
+
+  .button-group {
+    margin-bottom: $global-margin*2;
+  }
+
+  .list {
+    .row {
+      padding-bottom: $global-padding;
+    }
+
+    .icons {
+      padding-right: 0;
+    }
+  }
+}
+
+//Middle section (aka the yellow section)
+section.middle {
+  background-color: $yellow;
+  color: $black;
+
+  ::selection {
+    background: $blue;
+  }
+
+  @include breakpoint(small only) {
+    img {
+      width: 50%
+    }
+  }
+}
+
+//Bottom section (aka the black section)
+section.bottom {
+  background-color: $black;
+  height: 100%;
+
+  ::selection {
+    background: $yellow;
+  }
+}

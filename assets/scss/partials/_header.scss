@@ -17,20 +17,15 @@ header{
 
   &.medium-up-header {
     padding: ($global-padding*2) $global-padding;
-  }
 
-  .menu {
-    a {
-      &:not(:last-child) {
-        padding-right: $global-padding;
-      }
+    @include breakpoint(large) {
+      padding: ($global-padding*3) $global-padding;
     }
   }
 
-  // More padding on header for large and up
-  @include breakpoint(large){
-    &.medium-up-header {
-      padding: ($global-padding*3) $global-padding;
+  .menu {
+    a:not(:last-child) {
+      padding-right: $global-padding;
     }
   }
 }
