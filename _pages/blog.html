@@ -1,44 +1,28 @@
 ---
 layout: static-page
 title: blog
-summary: "IncludeOS is a performant, minimal unikernel operating system for the cloud. We provide a bootloader, standard libraries and the build - and deployment system. You just provide the service."
+class: blog
 permalink: /blog/
+summary: "IncludeOS is a performant, minimal unikernel operating system for the cloud. We provide a bootloader, standard libraries and the build - and deployment system. You just provide the service."
 ---
 
-<section class="blog">
+{% for post in site.posts %}
 
-  <div class="row align-center">
-    <div class="page-title small-12 medium-9 columns">
-      <h1>{{ page.title }}</h1>
-      <p>{{ page.summary }}</p>
-    </div>
+  <div class="blog-posts row align-middle">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+      <div class="small-12 medium-2 columns">
+        <img src="{{post.hero}}" alt="{{ post.title }}">
+      </div>
+
+      <div class="small-12 medium-10 columns">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.summary }}</p>
+
+        {% for category in post.categories %}
+          <span>{{ category }}</span>
+        {% endfor %}
+      </div>
+    </a>
   </div>
 
-  <div class="row align-center">
-
-    {% for post in site.posts %}
-    <div class="page-content small-12 medium-9 columns">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-
-        <div class="row align-middle">
-          <div class="small-12 medium-2 columns">
-            <img src="{{post.hero}}" alt="{{ post.title }}">
-          </div>
-
-          <div class="small-12 medium-10 columns">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.summary }}</p>
-
-            {% for category in post.categories %}
-              <span>{{ category }}</span>
-            {% endfor %}
-          </div>
-        </div>
-
-      </a>
-    </div>
-    {% endfor %}
-
-  </div>
-
-</section>
+{% endfor %}
