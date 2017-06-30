@@ -1,0 +1,9 @@
+footer {
+  padding: $global-padding;
+  background-color: $black;
+  height: 100%;
+
+  ::selection {
+    background: $yellow;
+  }
+}

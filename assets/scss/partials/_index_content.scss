@@ -40,13 +40,3 @@ section.middle {
     }
   }
 }
-
-//Bottom section (aka the black section)
-section.bottom {
-  background-color: $black;
-  height: 100%;
-
-  ::selection {
-    background: $yellow;
-  }
-}
