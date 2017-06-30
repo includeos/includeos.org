@@ -1,31 +1,44 @@
 ---
 layout: static-page
-title: Blog
+title: blog
+summary: "IncludeOS is a performant, minimal unikernel operating system for the cloud. We provide a bootloader, standard libraries and the build - and deployment system. You just provide the service."
 permalink: /blog/
 ---
 
 <section class="blog">
 
-  {% for post in site.posts %}
-    <div class="small-12 medium-6 large-6 columns">
-      <div>
+  <div class="row align-center">
+    <div class="page-title small-12 medium-9 columns">
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.summary }}</p>
+    </div>
+  </div>
 
-        <a href="{{ post.url | prepend: site.baseurl }}">
+  <div class="row align-center">
 
-          <span class="text-content">
+    {% for post in site.posts %}
+    <div class="page-content small-12 medium-9 columns">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+
+        <div class="row align-middle">
+          <div class="small-12 medium-2 columns">
+            <img src="{{post.hero}}" alt="{{ post.title }}">
+          </div>
+
+          <div class="small-12 medium-10 columns">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.summary }}</p>
 
             {% for category in post.categories %}
               <span>{{ category }}</span>
             {% endfor %}
+          </div>
+        </div>
 
-            <h2 class="post-title">{{post.title}}
-            </h2>
-            <span>{{post.subtitle}}</span>
-          </span>
-        </a>
-
-      </div>
+      </a>
     </div>
-  {% endfor %}
+    {% endfor %}
+
+  </div>
 
 </section>

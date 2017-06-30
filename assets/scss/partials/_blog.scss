@@ -1,0 +1,14 @@
+.blog {
+  color: $black;
+
+  a {
+    &:hover {
+      color: black;
+      cursor: crosshair;
+    }
+  }
+
+  h2 {
+    font-weight: $global-weight-bold;
+  }
+}

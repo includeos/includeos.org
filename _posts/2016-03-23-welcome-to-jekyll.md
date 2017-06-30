@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-categories: jekyll update
+title:  Post Title One
+categories: [apples, oranges]
+summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nunc a lacus semper suscipit a id massa. Etiam vel nulla augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae."
+hero: /assets/img/cuter_acorn.png
 ---
+
 
 You'll find this post in your `_posts` directory.
 
