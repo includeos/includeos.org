@@ -2,8 +2,8 @@
   color: $black;
 
   .page-title{
-    border-bottom: 2px solid #1A1A1B;
-    padding: ($global-padding*2) 0 ($global-padding*3) 0;
+    border-bottom: 1px solid rgba(26, 26, 27, 0.4);
+    padding: ($global-padding*2) 0 ($global-padding*2) 0;
   }
 
   &.blog {
@@ -20,13 +20,12 @@
   }
 
   .page-content{
-    padding: ($global-padding*2) 0;
+    padding: 0 0 ($global-padding*2) 0;
   }
 
   a {
     &:hover {
       color: black;
-      cursor: crosshair;
     }
   }
 

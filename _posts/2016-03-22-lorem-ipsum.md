@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Post Title Two
+author: Ray Harvey
 categories: [oranges]
 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nunc a lacus semper suscipit a id massa. Etiam vel nulla augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam mattis odio orci, non aliquam ipsum pretium eu. Nulla scelerisque vel neque vitae consequat. Donec molestie lectus eget rutrum tristique."
 hero: /assets/img/acorn.png

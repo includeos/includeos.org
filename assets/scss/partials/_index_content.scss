@@ -3,7 +3,8 @@ section.top {
   background-color: $blue;
 
   ::selection {
-    background: $yellow;
+    background: $black;
+    color: $white;
   }
 
   h1 {
@@ -31,8 +32,15 @@ section.middle {
   color: $black;
 
   ::selection {
-    background: $blue;
+     background: $black;
+    color: $white;
   }
+
+  .circle {
+     height: 59px;
+     width: 59px;
+     display: inline-block;
+ }
 
   @include breakpoint(small only) {
     img {

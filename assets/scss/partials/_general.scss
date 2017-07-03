@@ -1,7 +1,7 @@
 //General styles (ex: link styles, button styles, etc. )
 html, body {
   color: $white;
-  height: 100%;
+  padding-bottom: 4rem;
 }
 
 .container {
@@ -50,7 +50,8 @@ a {
       position: absolute;
       border: 2px solid $black;
       left: 0;
-      right: 62%;
+      right: auto;
+      width: 2rem;
       bottom: -11px;
       border-radius: 2px;
     }
@@ -58,18 +59,34 @@ a {
 }
 
 //Button Styles
+.button {
+   font-weight: 700;
+   font-size: .9rem;
+}
+
 .hollow.button {
   &.primary {
+     border: 2px solid $white;
+
     &:hover, &:focus {
       border-color: $black;
-      color: $black;
+      color: $white;
     }
   }
 
   &.secondary {
+     border: 2px solid $black;
+
     &:hover, &:focus {
-      background-color: $white;
       border-color: $white;
     }
   }
+}
+
+
+
+span.tags {
+  border: 1px solid $black;
+  border-radius: 10rem;
+  padding: 0 $global-padding / 3;
 }

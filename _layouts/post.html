@@ -2,19 +2,24 @@
 {% include header.html %}
 
     <main>
-      <section>
+      <section id="post">
+         <div class="row align-center">
+            <div class="small-12 medium-9 columns">
+               <h1>{{page.title}}</h1>
+               <h4>{{page.author}} - {{page.date}}</h4>
 
-        {% for category in page.categories %}
-          <span>{{ category }}</span>
-        {% endfor %}
 
-        <h1>{{page.title}}</h1>
-        <h2>{{page.subtitle}}</h2>
+               <div class="tags-wrapper">
+                  {% for category in page.categories %}
+                    <span class="tags">{{ category }}</span>
+                  {% endfor %}
+               </div>
 
-        <div class="post-content">
-          {{ content }}
-        </div>
-
+               <div class="post-content">
+                 {{ content }}
+               </div>
+            </div>
+         </div>
       </section>
     </main>
 

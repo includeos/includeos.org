@@ -1,31 +1,41 @@
 header{
-  background: $blue;
+   background: $blue;
 
-  ::selection {
-    background: $yellow;
-  }
+   ::selection {
+      background: $yellow;
+   }
 
-  .title-bar {
-    background: $blue;
-    width: 100%;
-    padding: 1.7rem;
+   .title-bar {
+      background: $blue;
+      width: 100%;
+      padding: 1.7rem;
 
-    .title-bar-right {
-      padding-top: .7rem;
-    }
-  }
+      .title-bar-right {
+         padding-top: .7rem;
+      }
+   }
 
-  &.medium-up-header {
-    padding: ($global-padding*2) $global-padding;
+   &.medium-up-header {
+      padding: ($global-padding*2) $global-padding;
 
-    @include breakpoint(large) {
-      padding: ($global-padding*3) $global-padding;
-    }
-  }
+      @include breakpoint(large) {
+         padding: ($global-padding*3) $global-padding;
+      }
+   }
 
-  .menu {
-    a:not(:last-child) {
-      padding-right: $global-padding;
-    }
-  }
+   .menu {
+      a {
+         font-weight: 700;
+         font-size: 1.5rem;
+         color: rgba($black, .5);
+
+         &:hover {
+            color: $black;
+         }
+
+         &:not(:last-child) {
+            padding-right: $global-padding*2;
+         }
+      }
+   }
 }

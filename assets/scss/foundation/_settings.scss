@@ -9,7 +9,7 @@ $global-margin: 1rem;
 $global-padding: 1rem;
 
 //Foundation 6 Variables
-$body-font-family: 'Open Sans', 'sans-serif';
+$body-font-family: 'Roboto', 'sans-serif';
 $buttongroup-spacing: $global-margin;
 $global-radius: 20px;
 
@@ -19,7 +19,7 @@ $header-styles: (
     'h2': ('fs': 20),
     'h3': ('fs': 19),
     'h4': ('fs': 18),
-    'h5': ('fs': 17),
+    'h5': ('fs': 14),
     'h6': ('fs': 16)
   ),
   'medium': (
@@ -39,3 +39,8 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
+
+
+$button-padding: 1.2rem 1.5rem;
+$button-radius: 100rem;
+$button-hollow-border-width: 2px;
