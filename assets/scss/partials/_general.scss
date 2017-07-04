@@ -1,62 +1,76 @@
 //General styles (ex: link styles, button styles, etc. )
 html, body {
-  color: $white;
-  padding-bottom: 4rem;
+   padding-bottom: 4rem;
+
+   ::selection {
+      background: $black;
+      color: $white;
+   }
+
+   img {
+      width: 100%;
+      height: auto;
+   }
 }
 
 .container {
-  height: 100%;
+   height: 100%;
 
-  .bottom {
-    flex: 0 1 2rem;
-  }
+   .bottom {
+      flex: 0 1 2rem;
+   }
 }
 
 section {
-  padding: $global-padding;
+   padding: $global-padding;
 }
 
 h1 {
-  font-weight: $global-weight-bold;
+   font-weight: $global-weight-bold;
 }
 
 //Link Styles
 a {
-  color: $black;
-  position: relative;
+   color: $black;
+   position: relative;
 
-  &.white {
-    color: $white;
+   &:hover {
+      color: $blue;
 
-    &:hover {
-      color: $black;
-    }
-  }
+      &.underline:after {
+         border: 2px solid $black;
+      }
+   }
 
-  //Makes right arrow (">") after link
-  &.right-arrow:after {
-    content: ">";
-    position: relative;
-    top: 1px;
-    left: 6px;
-  }
+   &.white {
+      color: $white;
 
-  &:hover {
-    color: $white;
+      &:hover {
+         color: $black;
+      }
+   }
 
-    //Makes black underline under links
-    &.underline:after {
+   //Makes right arrow (">") after link
+   &.right-arrow:after {
+      content: ">";
+      position: relative;
+      top: 1px;
+      left: 6px;
+   }
+
+   //Makes black underline under links
+   &.underline:after {
       content: "";
       position: absolute;
-      border: 2px solid $black;
+      border: 2px solid $blue;
       left: 0;
       right: auto;
       width: 2rem;
       bottom: -11px;
       border-radius: 2px;
-    }
-  }
+   }
 }
+
 
 //Button Styles
 .button {
@@ -65,28 +79,29 @@ a {
 }
 
 .hollow.button {
-  &.primary {
-     border: 2px solid $white;
+   &.primary {
+      border: 2px solid $white;
 
-    &:hover, &:focus {
-      border-color: $black;
-      color: $white;
-    }
-  }
+      &:hover, &:focus {
+         border-color: $black;
+         color: $white;
+      }
+   }
 
-  &.secondary {
-     border: 2px solid $black;
+   &.secondary {
+      border: 2px solid $black;
 
-    &:hover, &:focus {
-      border-color: $white;
-    }
-  }
+      &:hover, &:focus {
+         border-color: $white;
+      }
+   }
 }
 
 
 
 span.tags {
-  border: 1px solid $black;
-  border-radius: 10rem;
-  padding: 0 $global-padding / 3;
+   border: 1px solid $black;
+   border-radius: 10rem;
+   padding: 0 $global-padding / 3;
+   margin: 0 .4rem 0 0;
 }

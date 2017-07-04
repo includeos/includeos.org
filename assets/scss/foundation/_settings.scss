@@ -23,8 +23,8 @@ $header-styles: (
     'h6': ('fs': 16)
   ),
   'medium': (
-    'h1': ('fs': 30),
-    'h2': ('fs': 20),
+    'h1': ('fs': 35),
+    'h2': ('fs': 25),
     'h3': ('fs': 18),
     'h4': ('fs': 16),
     'h5': ('fs': 14),
@@ -33,7 +33,7 @@ $header-styles: (
 );
 
 $foundation-palette: (
-  primary: $white,
+  primary: $blue,
   secondary: $black,
   success: #3adb76,
   warning: #ffae00,

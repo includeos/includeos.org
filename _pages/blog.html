@@ -16,8 +16,8 @@ summary: "IncludeOS is a performant, minimal unikernel operating system for the 
 
       <div class="small-12 medium-10 columns">
         <h2>{{ post.title }}</h2>
-        <p>{{ post.author }} - {{post.date}}</p>
-        <p>{{post.summary}}</p>
+        <p class="author">{{ post.author }} - {{ post.date }}</p>
+        <p>{{ post.summary }}</p>
 
         {% for category in post.categories %}
           <span class="tags">{{ category }}</span>

@@ -1,10 +1,6 @@
 header{
    background: $blue;
 
-   ::selection {
-      background: $yellow;
-   }
-
    .title-bar {
       background: $blue;
       width: 100%;
@@ -13,6 +9,10 @@ header{
       .title-bar-right {
          padding-top: .7rem;
       }
+   }
+
+   .logo {
+      max-width: 15rem;
    }
 
    &.medium-up-header {

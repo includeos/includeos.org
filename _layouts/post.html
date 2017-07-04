@@ -4,9 +4,25 @@
     <main>
       <section id="post">
          <div class="row align-center">
-            <div class="small-12 medium-9 columns">
+            <div class="small-12 medium-7 columns">
                <h1>{{page.title}}</h1>
-               <h4>{{page.author}} - {{page.date}}</h4>
+            </div>
+            <div class="small-12 medium-9 columns">
+
+               <div class="row">
+                  <div class="small-5 columns">
+                     <div class="author-image">
+                        <img src="{{page.author-image}}" alt="">
+                     </div>
+                  </div>
+                  <div class="small-7 columns">
+                     <p class="author">{{page.author}} - {{page.date}}</p>
+                  </div>
+               </div>
+
+
+
+
 
 
                <div class="tags-wrapper">

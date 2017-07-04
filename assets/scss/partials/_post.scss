@@ -1,0 +1,42 @@
+#post {
+   color: $black;
+
+
+   h1 {
+      text-align: center;
+      margin: 1rem 0;
+   }
+
+   h2, h3, h4 {
+      margin: 2rem 0 .5rem 0;
+      font-weight: $global-weight-bold;
+   }
+
+   .author {
+      margin-top: .9rem;
+      color: $dark-gray;
+   }
+
+   .tags-wrapper {
+      width: 100%;
+      text-align: center;
+   }
+
+   .tags {
+      display: inline-block;
+      margin: 2rem .2rem 3rem .2rem;
+   }
+
+   .author-image {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      float: right;
+      overflow: hidden;
+
+      img {
+         height: 50px;
+         width: 50px;
+      }
+   }
+}

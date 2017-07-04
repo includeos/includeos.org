@@ -13,6 +13,10 @@ footer {
      font-weight: 300;
  }
 
+ h1, h5 {
+    color: $white;
+}
+
   ::selection {
     background: $white;
     color: $black;

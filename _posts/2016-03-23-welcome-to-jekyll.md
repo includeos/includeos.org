@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  Post Title One
+title:  An interesting title that also works on two lines if it has to
 author: Ray Harvey
 categories: [apples, oranges]
 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nunc a lacus semper suscipit a id massa. Etiam vel nulla augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae."
 hero: /assets/img/cuter_acorn.png
+author-image: /assets/img/authors/ray_harvey.jpg
 ---
 
 
@@ -21,6 +22,26 @@ end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
+
+
+
+## Header 2
+
+Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
+
+[jekyll-gh]: https://github.com/jekyll/jekyll
+[jekyll]:    http://jekyllrb.com
+
+
+### Header 3
+
+Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
+
+[jekyll-gh]: https://github.com/jekyll/jekyll
+[jekyll]:    http://jekyllrb.com
+
+
+#### Header 4
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
 

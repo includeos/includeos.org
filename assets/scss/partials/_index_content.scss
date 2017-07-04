@@ -1,50 +1,64 @@
 //Top section (aka the blue section)
 section.top {
-  background-color: $blue;
+   background-color: $blue;
+   padding: 3rem 0 4rem 0;
+   position: relative;
 
-  ::selection {
-    background: $black;
-    color: $white;
-  }
+   .button-group {
+      position: absolute;
+      bottom: 4rem;
 
-  h1 {
-    padding-bottom: $global-padding;
-  }
+      .button {
+         color: white;
+      }
+   }
 
-  .button-group {
-    margin-bottom: $global-margin*2;
-  }
+   p, h1 {
+      color: $white;  
+   }
 
-  .list {
-    .row {
-      padding-bottom: $global-padding;
-    }
+   .list {
+      .row {
+         padding-bottom: $global-padding;
+      }
 
-    .icons {
-      padding-right: 0;
-    }
-  }
+      .icons {
+         padding-right: 0;
+      }
+   }
 }
 
 //Middle section (aka the yellow section)
 section.middle {
-  background-color: $yellow;
-  color: $black;
+   background-color: $yellow;
+   color: $black;
 
-  ::selection {
-     background: $black;
-    color: $white;
-  }
+   .squirrel {
+      max-width: 60%;
+      margin: 3rem 0;
+      float: right;
+   }
 
-  .circle {
-     height: 59px;
-     width: 59px;
-     display: inline-block;
- }
+   .circle {
+      height: 57px;
+      width: 57px;
+      display: inline-block;
+      padding: 0;
+   }
 
-  @include breakpoint(small only) {
-    img {
-      width: 50%
-    }
-  }
+   p {
+      margin-bottom: 2rem;
+   }
+
+   @include breakpoint(small only) {
+      img {
+         width: 50%
+      }
+   }
+}
+
+.top, .middle {
+   h1 {
+      margin: $global-padding 0;
+   }
 }

@@ -14,7 +14,12 @@
       padding-bottom: $global-padding*2;
 
       &:not(first-child){
-        padding-top: $global-padding;
+        padding-top: $global-padding*2;
+      }
+
+      .author {
+         color: $dark-gray;
+         font-size: .9rem;
       }
     }
   }
