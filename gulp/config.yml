@@ -21,7 +21,6 @@ copy:
     - "!assets/css{,/**}"            # css dir
     - "!assets/js{,/**}"             # js dir
     - "!assets/scss{,/**}"           # scss dir
-    - "!assets/vendor{,/**}"         # vendor dir
   dist: "_site/assets/"
   notification: "Running Copy"
 
@@ -58,7 +57,7 @@ javascript:
     # - "assets/vendor/foundation-sites/js/foundation.responsiveToggle.js"
     # - "assets/vendor/foundation-sites/js/foundation.reveal.js"
     # - "assets/vendor/foundation-sites/js/foundation.slider.js"
-    - "assets/vendor/foundation-sites/js/foundation.sticky.js"
+    #- "assets/vendor/foundation-sites/js/foundation.sticky.js"
     # - "assets/vendor/foundation-sites/js/foundation.tabs.js"
     # - "assets/vendor/foundation-sites/js/foundation.toggler.js"
     # - "assets/vendor/foundation-sites/js/foundation.tooltip.js"
@@ -71,6 +70,10 @@ javascript:
     # - "assets/vendor/foundation-sites/js/foundation.util.touch.js"
     - "assets/vendor/foundation-sites/js/foundation.util.triggers.js"
     # - "assets/vendor/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js"
+
+    # Highlight.js
+    #- "assets/vendor/highlight.js/src/highlight.js"
+    #- "assets/vendor/highlight.js/src/languages/java.js"
 
     # Paths to your own project code are here
     # All the files in this list and in the js dir are concatenated into all.js

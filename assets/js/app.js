@@ -9,6 +9,8 @@
 $(document).foundation();
 console.log("hi from app.js");
 
-//
-// Custom JS
-// --------------------------------------------------
+
+
+$(document).ready(function() {
+   hljs.initHighlightingOnLoad();
+});
