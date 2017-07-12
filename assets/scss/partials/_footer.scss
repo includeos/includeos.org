@@ -6,12 +6,15 @@ footer {
   right: 0;
   width: 100%;
 
-  p {
+  p, a {
       color: $white;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   ::selection {
-    background: $white;
-    color: $black;
+    background: $black;
   }
 }

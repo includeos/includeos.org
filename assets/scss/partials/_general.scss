@@ -24,7 +24,7 @@ section {
    padding: $global-padding;
 }
 
-h1 {
+h1, h2, h3, h4 {
    font-weight: $global-weight-bold;
 }
 
@@ -102,8 +102,15 @@ a {
 
 
 span.tags {
-   border: 1px solid $black;
-   border-radius: 10rem;
-   padding: 0 $global-padding / 3;
+   border: 1px solid rgba(214, 214, 214, .7);
+   border-radius: $button-radius;
+   font-size: .9rem;
+   color: lighten($black, 20);
+   padding: $global-padding / 3;
    margin: 0 .4rem 0 0;
+
+   &:hover {
+       background: rgba(214, 214, 214, .2);
+       color: $black;
+   }
 }

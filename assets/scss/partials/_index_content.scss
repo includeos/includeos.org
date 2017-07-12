@@ -5,9 +5,14 @@ section.top {
    position: relative;
 
    .button-group {
+    margin: 1.5rem 0;
 
       .button {
          color: white;
+      }
+
+      a {
+          text-decoration: none;
       }
    }
 
@@ -17,7 +22,7 @@ section.top {
 
    .list {
       .row {
-         padding-bottom: $global-padding;
+         padding-bottom: 2rem;
       }
 
       .icons {
@@ -53,21 +58,32 @@ section.middle {
          width: 50%
       }
    }
+
+   // Önd gaf Óðinn
 }
 
-// Margin override for all titles
 .top, .middle, .last {
    h2 {
       margin: $global-padding 0;
    }
-}
 
+       
+   a {
+       text-decoration: underline;
+   }
+
+   a:hover {
+       color: lighten($black, 20);
+   }
+}
 
 //Last section (where you can brag)
 section.last {
-    background-color: #222;
+    background-color: lighten($black, 2);
     color: $white;
     padding: 2rem 0 2rem 0;
 
-
+    a {
+        color: $white;
+    }
 }

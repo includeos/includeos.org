@@ -2,7 +2,7 @@
   color: $black;
 
   .page-title{
-    border-bottom: 1px solid rgba(26, 26, 27, 0.4);
+    border-bottom: 1px solid rgba(214, 214, 214, 1);
     padding: ($global-padding*2) 0 ($global-padding*2) 0;
   }
 
@@ -10,7 +10,7 @@
     .blog-posts {
       margin-left: 0;
       margin-right: 0;
-      border-bottom: 1px solid $gray;
+      border-bottom: 1px solid rgba(214, 214, 214, 1);
       padding-bottom: $global-padding*2;
 
       &:not(first-child){
@@ -25,7 +25,7 @@
   }
 
   .page-content{
-    padding: 0 0 ($global-padding*2) 0;
+    padding: ($global-padding*2) 0;
   }
 
   a {
