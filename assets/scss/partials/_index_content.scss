@@ -5,15 +5,13 @@ section.top {
    position: relative;
 
    .button-group {
-      position: absolute;
-      bottom: 4rem;
 
       .button {
          color: white;
       }
    }
 
-   p, h1 {
+ h1, h2, p {
       color: $white;  
    }
 
@@ -57,8 +55,19 @@ section.middle {
    }
 }
 
-.top, .middle {
-   h1 {
+// Margin override for all titles
+.top, .middle, .last {
+   h2 {
       margin: $global-padding 0;
    }
+}
+
+
+//Last section (where you can brag)
+section.last {
+    background-color: #222;
+    color: $white;
+    padding: 2rem 0 2rem 0;
+
+
 }

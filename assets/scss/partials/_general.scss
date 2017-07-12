@@ -1,6 +1,5 @@
 //General styles (ex: link styles, button styles, etc. )
 html, body {
-   padding-bottom: 4rem;
 
    ::selection {
       background: $black;
@@ -83,8 +82,9 @@ a {
       border: 2px solid $white;
 
       &:hover, &:focus {
-         border-color: $black;
-         color: $white;
+         border-color: $white;
+         color: $black;
+         background: $white;
       }
    }
 
@@ -92,7 +92,9 @@ a {
       border: 2px solid $black;
 
       &:hover, &:focus {
-         border-color: $white;
+         border-color: $black;
+         color: $white;
+         background: $black;
       }
    }
 }
