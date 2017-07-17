@@ -16,7 +16,17 @@
                      </div>
                   </div>
                   <div class="small-7 columns">
-                     <p class="author">{{page.author}} - {{page.date}}</p>
+                     <p class="author">{{page.author}} -
+                       {% assign d = page.date | date: "%-d" %}
+                       {% case d %}
+                         {% when '1' or '21' or '31' %}{{ d }}st
+                         {% when '2' or '22' %}{{ d }}nd
+                         {% when '3' or '23' %}{{ d }}rd
+                         {% else %}{{ d }}th
+                       {% endcase %} of
+                       {{ page.date | date: "%B" }}
+                       {{ page.date | date: "%Y" }}
+                     </p>
                   </div>
                </div>
 
