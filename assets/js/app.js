@@ -16,12 +16,18 @@ $(function() {
   hljs.initHighlightingOnLoad();
 });
 
-$("#menu-button").click(function(){
-  $(".overlay-menu").toggle();
+var toggleMenuButton = function toggleMenuButton(){
   $("#menu-button").toggleClass("is-active");
+  $("#menu-button-close").toggleClass("is-active");
+  $('body').toggleClass("no-scroll");
+};
+
+$("#menu-button").click(function(){
+  $(".overlay-menu").fadeIn();
+  toggleMenuButton();
 });
 
 $("#menu-button-close").click(function(){
-  $(".overlay-menu").toggle();
-  $("#menu-button").toggleClass("is-active");
+  $(".overlay-menu").fadeOut();
+  toggleMenuButton();
 });
