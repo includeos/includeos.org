@@ -1,85 +1,89 @@
 //Top section (aka the blue section)
+
 section.top {
-   background-color: $blue;
-   position: relative;
+  background-color: $blue;
+  position: relative;
 
-   .button-group {
-    margin: 1.5rem 0;
+  .button-group {
+    margin: $global-margin 0 ($global-margin*2) 0;
 
-      .button {
-         color: white;
+    .button {
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  h1, h2, p {
+    color: $white;
+  }
+
+  .list {
+    .row {
+      padding-bottom: $global-padding;
+
+      img {
+        max-width: 50px;
       }
-
-      a {
-          text-decoration: none;
+      p {
+        margin-bottom: 0;
       }
-   }
+    }
 
- h1, h2, p {
-      color: $white;
-   }
-
-   .list {
-      .row {
-         padding-bottom: 2rem;
-      }
-
-      .icons {
-         padding-right: 0;
-      }
-   }
+    .icons {
+      padding-right: 0;
+    }
+  }
 }
-
 //Middle section (aka the yellow section)
 section.middle {
-   background-color: $yellow;
-   color: $black;
+  background-color: $yellow;
+  color: $black;
 
-   .squirrel {
-      max-width: 60%;
-      margin: 3rem 0;
-      float: right;
-   }
+  .squirrel {
+    max-width: 60%;
+    margin: 3rem 0;
+    float: right;
+  }
 
-   .circle {
-      height: 57px;
-      width: 57px;
-      display: inline-block;
-      padding: 0;
-   }
+  .circle {
+    height: 57px;
+    width: 57px;
+    display: inline-block;
+    padding: 0;
+  }
 
-   p {
-      margin-bottom: 2rem;
-   }
-
-   @include breakpoint(small only) {
-      img {
-         width: 50%
-      }
-   }
+  p {
+    margin-bottom: 2rem;
+  }
+  @include breakpoint(small only) {
+    img {
+      width: 50%;
+    }
+  }
 }
 
-.top, .middle, .last {
-   h2 {
-      margin: $global-padding 0;
-   }
+.last, .middle, .top {
+  h2 {
+    margin: $global-padding 0;
+  }
 
+  a {
+    text-decoration: underline;
+  }
 
-   a {
-       text-decoration: underline;
-   }
-
-   a:hover {
-       color: lighten($black, 20);
-   }
+  a:hover {
+    color: lighten($black, 20);
+  }
 }
-
 //Last section (where you can brag)
 section.last {
-    background-color: lighten($black, 2);
-    color: $white;
+  background-color: lighten($black, 2);
+  color: $white;
 
-    img {
-      max-width: 100px;
-    }
+  img {
+    max-width: 100px;
+  }
 }

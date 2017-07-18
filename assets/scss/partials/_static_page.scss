@@ -3,7 +3,8 @@
 
   .page-title{
     border-bottom: 1px solid rgba(214, 214, 214, 1);
-    padding: ($global-padding*2) 0 ($global-padding*2) 0;
+    padding-top: $global-padding*2;
+    padding-bottom: $global-padding*2;
   }
 
   &.blog {
@@ -25,7 +26,8 @@
   }
 
   .page-content{
-    padding: ($global-padding*2) 0;
+    padding-top: $global-padding*2;
+    padding-bottom: $global-padding*2;
   }
 
   a {
