@@ -3,6 +3,9 @@ footer {
   background-color: $black;
   color: $white;
   letter-spacing: .5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   p {
     margin-bottom: 0;

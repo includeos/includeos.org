@@ -1,4 +1,12 @@
 //General styles (ex: link styles, button styles, etc. )
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 3rem;
+}
 
 body, html {
   ::selection {
