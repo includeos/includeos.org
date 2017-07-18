@@ -57,7 +57,7 @@ javascript:
     # - "assets/vendor/foundation-sites/js/foundation.responsiveToggle.js"
     # - "assets/vendor/foundation-sites/js/foundation.reveal.js"
     # - "assets/vendor/foundation-sites/js/foundation.slider.js"
-    #- "assets/vendor/foundation-sites/js/foundation.sticky.js"
+    - "assets/vendor/foundation-sites/js/foundation.sticky.js"
     # - "assets/vendor/foundation-sites/js/foundation.tabs.js"
     # - "assets/vendor/foundation-sites/js/foundation.toggler.js"
     # - "assets/vendor/foundation-sites/js/foundation.tooltip.js"
