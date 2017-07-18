@@ -1,17 +1,18 @@
 footer {
   padding: $global-padding;
   background-color: $black;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  color: $white;
+  letter-spacing: .5px;
 
-  p, a {
-      color: $white;
+  p {
+    margin-bottom: 0;
   }
 
-  a {
+  a.white {
     text-decoration: underline;
+    &:hover {
+      color: $blue;
+    }
   }
 
   ::selection {
