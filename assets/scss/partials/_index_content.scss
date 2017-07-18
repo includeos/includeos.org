@@ -1,7 +1,6 @@
 //Top section (aka the blue section)
 section.top {
    background-color: $blue;
-   padding: 3rem 0 4rem 0;
    position: relative;
 
    .button-group {
@@ -17,7 +16,7 @@ section.top {
    }
 
  h1, h2, p {
-      color: $white;  
+      color: $white;
    }
 
    .list {
@@ -67,7 +66,7 @@ section.middle {
       margin: $global-padding 0;
    }
 
-       
+
    a {
        text-decoration: underline;
    }

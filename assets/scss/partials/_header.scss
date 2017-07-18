@@ -62,7 +62,7 @@ header {
 
 .overlay-menu {
   background-color: rgba(0,0,0,.7);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: fixed;
   top:0;
@@ -76,13 +76,12 @@ header {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    margin: 0 auto;
 
     a {
-      display: block;
-    }
-    h1 {
-      line-height: 2.4;
+      margin: -4px;
+      &:hover {
+        color: $white;
+      }
     }
   }
 }
