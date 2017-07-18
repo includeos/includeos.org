@@ -48,20 +48,32 @@ section.middle {
     float: right;
   }
 
-  .circle {
-    height: 57px;
-    width: 57px;
-    display: inline-block;
-    padding: 0;
+  a {
+    text-decoration: underline;
+
+    &.button {
+      text-decoration: none;
+    }
   }
 
   p {
     margin-bottom: 2rem;
   }
+
   @include breakpoint(small only) {
     img {
       width: 50%;
     }
+  }
+}
+
+//Last section (where you can brag)
+section.last {
+  background-color: lighten($black, 2);
+  color: $white;
+
+  img {
+    max-width: 100px;
   }
 }
 
@@ -70,20 +82,7 @@ section.middle {
     margin: $global-padding 0;
   }
 
-  a {
-    text-decoration: underline;
-  }
-
   a:hover {
     color: lighten($black, 20);
-  }
-}
-//Last section (where you can brag)
-section.last {
-  background-color: lighten($black, 2);
-  color: $white;
-
-  img {
-    max-width: 100px;
   }
 }
