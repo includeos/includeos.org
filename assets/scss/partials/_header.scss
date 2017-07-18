@@ -1,41 +1,88 @@
-header{
-   background: $blue;
+header {
+  background: $blue;
 
-   .title-bar {
-      background: $blue;
-      width: 100%;
-      padding: 1.7rem;
+  .title-bar {
+    background: $blue;
+    width: 100%;
+    padding: 1.7rem;
 
-      .title-bar-right {
-         padding-top: .7rem;
+    .title-bar-right {
+      padding-top: .7rem;
+    }
+  }
+
+  .logo {
+    max-width: 15rem;
+  }
+
+  &.medium-up-header {
+    padding: ($global-padding*2) $global-padding;
+    @include breakpoint(large) {
+      padding: ($global-padding*3) $global-padding;
+    }
+  }
+
+  .menu {
+    a {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: rgba($black, .5);
+
+      &:hover {
+        color: $black;
       }
-   }
 
-   .logo {
-      max-width: 15rem;
-   }
-
-   &.medium-up-header {
-      padding: ($global-padding*2) $global-padding;
-
-      @include breakpoint(large) {
-         padding: ($global-padding*3) $global-padding;
+      &:not(:last-child) {
+        padding-right: $global-padding*2;
       }
-   }
+    }
+  }
+}
 
-   .menu {
-      a {
-         font-weight: 700;
-         font-size: 1.5rem;
-         color: rgba($black, .5);
+// Burger menu on small screens
+#menu-button, #menu-button-close {
+  cursor: pointer;
 
-         &:hover {
-            color: $black;
-         }
+  .burger-icon {
+    @include burger(25px, 3px, 5px, $white);
+  }
 
-         &:not(:last-child) {
-            padding-right: $global-padding*2;
-         }
-      }
-   }
+  &.is-active {
+    .burger-icon {
+      @include burger-to-cross;
+    }
+  }
+}
+
+#menu-button-close {
+  position: relative;
+  top: 2.3rem;
+  right: 1.7rem;
+}
+
+.overlay-menu {
+  background-color: rgba(0,0,0,.7);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  overflow-x: hidden;
+  z-index: 1;
+  display: none;
+
+  .overlay-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    margin: 0 auto;
+
+    a {
+      display: block;
+    }
+    h1 {
+      line-height: 2.4;
+    }
+  }
 }

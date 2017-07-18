@@ -1,24 +1,21 @@
 <!-- Sticky header for small screens -->
 <header data-sticky-container class="show-for-small-only">
-   <div
-     class="title-bar sticky"
-     data-sticky
-     data-btm-anchor="middle:top"
-     data-options="marginTop:0;"
-     data-sticky-on="small only"
-   >
+  <div
+    class="title-bar sticky"
+    data-sticky
+    data-btm-anchor="middle:top"
+    data-options="marginTop:0;"
+    data-sticky-on="small only"
+  >
+    <div class="title-bar-left">
+      <a class="white" href="/"><img src="/assets/img/logo.png" alt="includeOS"></a>
+    </div>
 
-     <div class="title-bar-left">
-       <a class="white" href="/"><img src="/assets/img/logo.png" alt="includeOS"></a>
-     </div>
+    <div id="menu-button" class="title-bar-right">
+      <span class="burger-icon"></span>
+    </div>
 
-     <div class="menu title-bar-right">
-       <a class="white" href="/community/">community</a>
-       <a class="white" href="/get-started/">get started</a>
-       <a class="white" href="/get-started/">blog</a>
-     </div>
-
-   </div>
+  </div>
 </header>
 
 <!-- Regular header for medium screens and larger-->
@@ -37,3 +34,14 @@
 
  </div>
 </header>
+
+<div class="overlay-menu">
+  <div id="menu-button-close" class="title-bar-right is-active">
+    <span class="burger-icon"></span>
+  </div>
+  <div class="overlay-content">
+    <a class="white" href="/community/"><h1>community</h1></a>
+    <a class="white" href="/get-started/"><h1>get started</h1></a>
+    <a class="white" href="/get-started/"><h1>blog</h1></a>
+  </div>
+</div>
