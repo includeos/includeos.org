@@ -57,8 +57,6 @@ section.middle {
          width: 50%
       }
    }
-
-   // Önd gaf Óðinn
 }
 
 .top, .middle, .last {
@@ -80,9 +78,8 @@ section.middle {
 section.last {
     background-color: lighten($black, 2);
     color: $white;
-    padding: 2rem 0 2rem 0;
 
-    a {
-        color: $white;
+    img {
+      max-width: 100px;
     }
 }
