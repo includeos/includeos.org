@@ -1,26 +1,24 @@
 {% include head.html %}
+
 {% include header.html %}
 
-  <main>
+  <section class="static-page {{page.class}}">
 
-    <section class="static-page {{page.class}}">
-
-      <div class="row align-center">
-        <div class="page-title small-12 medium-9 columns">
-          <h1>{{ page.title }}</h1>
-          <p>{{ page.summary }}</p>
-        </div>
+    <div class="row align-center">
+      <div class="page-title small-12 medium-9 columns">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.summary }}</p>
       </div>
+    </div>
 
-      <div class="row align-center">
-        <div class="page-content small-12 medium-9 columns">
-          {{content}}
-        </div>
+    <div class="row align-center">
+      <div class="page-content small-12 medium-9 columns">
+        {{content}}
       </div>
+    </div>
 
-    </section>
-
-  </main>
+  </section>
 
 {% include footer.html %}
+
 {% include foot.html %}

@@ -18,17 +18,14 @@ body, html {
     width: 100%;
     height: auto;
   }
-
-  .no-scroll {
-    overflow: hidden;
-  }
 }
 
 .container {
-  height: 100%;
+  min-height: 100%;
 
-  .bottom {
-    flex: 0 1 2rem;
+  &.no-scroll {
+    overflow-x: hidden;
+    position: fixed;
   }
 }
 

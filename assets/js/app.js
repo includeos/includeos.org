@@ -19,7 +19,7 @@ $(function() {
 var toggleMenuButton = function toggleMenuButton(){
   $("#menu-button").toggleClass("is-active");
   $("#menu-button-close").toggleClass("is-active");
-  $('body').toggleClass("no-scroll");
+  $('.container').toggleClass("no-scroll");
 };
 
 $("#menu-button").click(function(){
