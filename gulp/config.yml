@@ -1,5 +1,5 @@
 browsersync:
-  notify: true
+  notify: false
   open:   false
   port:   3000
   server:
