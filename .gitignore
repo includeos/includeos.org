@@ -1,8 +1,8 @@
 # Stylesheet
-assets/css/app.css
+_src/assets/css/app.css
 
 # JavaScript
-assets/js/all.js
+_src/assets/js/all.js
 rev-manifest.json
 
 # Cache
@@ -42,10 +42,12 @@ _site
 .jekyll-metadata
 
 # Vendor directory
-assets/vendor/
+_src/assets/vendor/
 
 # Ruby
 Gemfile.lock
 
 # Composer
 composer.lock
+
+_dest

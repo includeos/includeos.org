@@ -43,7 +43,9 @@ Do all that in one step: make install ('composer install' disabled by default
 ### Tasks
 
 npm start  
-This will build your Jekyll site, give you file watching, browser synchronization, auto-rebuild, CSS injecting, Sass sourcemaps etc.  
+This will build your Jekyll site, give you file watching, browser synchronization, auto-rebuild, CSS injecting, Sass sourcemaps etc.
+
+The site will be built into the `_dest` folder.
 
 npm run build  
 This builds your site for production, with minified CSS and JavaScript. Run this before you deploy your site!  
@@ -60,14 +62,14 @@ We don't want to include unused CSS or JavaScript.
 
 ```
 Uncomment the components you want to use
-1. Sass in /assets/scss/foundation/_foundation.scss  
+1. Sass in _src/assets/scss/foundation/_foundation.scss  
 2. JavaScript in /gulp/config.yml in javascript.src (you need to restart gulp)
 ```
 
-Customize the variables used by Foundation in the settings file located in /assets/scss/foundation/.
-Copy the default settings from the foundation-sites package (/assets/vendor/foundation-sites/scss/settings/_settings.scss) and then change them to your needs  
+Customize the variables used by Foundation in the settings file located in `_src/assets/scss/foundation/`.
+Copy the default settings from the foundation-sites package (`_src/assets/vendor/foundation-sites/scss/settings/_settings.scss`) and then change them to your needs  
 
-Place your custom sass in the subfolders of /assets/scss/. These folders follow the SMACSS architecture. This should be the most scalable solution - from small to very large sites.
+Place your custom sass in the subfolders of `_src/assets/scss/`. These folders follow the SMACSS architecture. This should be the most scalable solution - from small to very large sites.
 
 ### Deploy your site
 

@@ -45,3 +45,6 @@ paginate:         5
 compress_html:
   ignore:
     envs: [development]
+
+source:      _src
+destination: _dest
