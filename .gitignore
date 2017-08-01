@@ -50,4 +50,5 @@ Gemfile.lock
 # Composer
 composer.lock
 
+# Build folder
 _dest
