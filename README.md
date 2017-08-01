@@ -31,12 +31,12 @@ Make (used with rsync for deploying)
 
 Git clone this repository, or download it into a directory of your choice. Inside the directory run
 
-1. bower install (reference: .bowerrc and bower.json)
-2. npm install (reference: package.json)
-3. bundle install (reference: Gemfile and Gemfile.lock)
-4. composer install (optional, reference: composer.json and composer.lock)  
+1. `bower install` (reference: .bowerrc and bower.json)
+2. `npm install` (reference: package.json)
+3. `bundle install` (reference: Gemfile and Gemfile.lock)
+4. `composer install` (optional, reference: composer.json and composer.lock)  
 
-Do all that in one step: make install ('composer install' disabled by default
+**Do all that in one step: `make install` (`composer install` disabled by default)**
 
 # Usage
 
@@ -73,7 +73,7 @@ Place your custom sass in the subfolders of `_src/assets/scss/`. These folders f
 
 ### Deploy your site
 
-Rsync is used here to sync our local _site with the remote host. Adjust the SSH-USER, SSH-HOST and REMOTE-PATH in the Makefile.
+Rsync is used here to sync our local `_dest` with the remote host. Adjust the SSH-USER, SSH-HOST and REMOTE-PATH in the Makefile.
 
 Be careful with these settings since rsync is set to delete the files on the remote path!
 
