@@ -36,25 +36,22 @@ Git clone this repository, or download it into a directory of your choice. Insid
 3. `bundle install` (reference: Gemfile and Gemfile.lock)
 4. `composer install` (optional, reference: composer.json and composer.lock)  
 
-**Do all that in one step: `make install` (`composer install` disabled by default)**
+# Get Up and Running
 
-# Usage
+### Build and Serve
 
-### Tasks
+- Run `npm start`  
+  - This will build your Jekyll site, give you file watching, browser synchronization, auto-rebuild, CSS injecting, Sass sourcemaps etc.
+  - The site will be built into the `_dest` folder.
+- Go to: http://127.0.0.1.xip.io:3000
+  - Here you can access your site. If you want to access it with your phone or tablet, use the external access address which is showing up in the terminal window.
+- Go to: http://127.0.0.1.xip.io:3001
+  - Here you can access the Browsersync UI.  
 
-npm start  
-This will build your Jekyll site, give you file watching, browser synchronization, auto-rebuild, CSS injecting, Sass sourcemaps etc.
+### Build for Production
 
-The site will be built into the `_dest` folder.
-
-npm run build  
-This builds your site for production, with minified CSS and JavaScript. Run this before you deploy your site!  
-
-http://127.0.0.1.xip.io:3000  
-Here you can access your site. If you want to access it with your phone or tablet, use the external access address which is showing up in the terminal window.  
-
-http://127.0.0.1.xip.io:3001  
-Access the Browsersync UI.  
+- Run `npm run build`  
+  - This builds your site for production, with minified CSS and JavaScript. Run this before you deploy your site!  
 
 ### Foundation for Sites Components
 
