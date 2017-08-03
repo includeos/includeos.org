@@ -4,6 +4,7 @@ title:  "Delegate initialization - the simpler way"
 author: andreas
 date:   2016-09-27 14:50:42 +0200
 categories: [c++, delegates]
+hero: /assets/img/posts/gift-1420830_640.jpg
 summary: "In the IncludeOS presentation at CppCon 2016 an example of a delegate initialization can be seen. With a lot of delegates this can quick get kinda messy. Since then we found a simpler way to initialize our delegates."
 author-image: /assets/img/authors/andreas.jpg
 ---
