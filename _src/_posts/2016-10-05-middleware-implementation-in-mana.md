@@ -5,6 +5,7 @@ author: andreas
 date:   2016-10-05 15:49:42 +0200
 categories: [mana, middleware]
 hero: /assets/img/posts/squirrel-mana.jpg
+author-image: /assets/img/authors/andreas.jpg
 summary: "Mana is a C++ web application framework built for IncludeOS. In this post I will explain the concept *middleware*; what it is used for, how we have implemented it and other parts related to it."
 ---
 [Mana](https://github.com/includeos/mana) is a C++ web application framework built for [IncludeOS](https://github.com/hioa-cs/IncludeOS). In this post I will explain the concept *middleware*; what it is used for, how we have implemented it and other parts related to it.
@@ -13,7 +14,7 @@ The point of a middleware is to make the server modular by spreading out the res
 
 Here's a simplifed cutout of the middleware stack that can be found in our web server [Acorn](https://github.com/includeos/acorn):
 
-![Middleware stack]({{site-url}}/media/mana-middleware.png)
+![Middleware stack]({{site-url}}/assets/img/posts/mana-middleware.png)
 
 For every incoming HTTP `Request` there will be created and sent one matching HTTP `Response` (1:1). They will get passed down together through some predefined rules (the middleware stack) before they finally get processed by the router.
 
