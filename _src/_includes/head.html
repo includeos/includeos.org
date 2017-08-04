@@ -16,7 +16,12 @@
   <link rel="stylesheet" href="/assets/css/app.css">
   <link rel="stylesheet" href="/assets/vendor/highlight.js/src/styles/atom-one-dark.css">
 </head>
+{% if page.url == "/" %}
+<body class="front">
+{% else %}
 <body>
+{% endif %}
+
 
 <!-- Site container to disable scrolling when mobile overlay menu is active -->
 <div class="container">

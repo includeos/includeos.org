@@ -8,6 +8,10 @@ body {
   margin-bottom: 3rem;
 }
 
+body.front {
+  background: #2c313a;
+}
+
 body, html {
   ::selection {
     background: $black;
