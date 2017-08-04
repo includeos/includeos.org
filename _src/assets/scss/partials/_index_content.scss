@@ -25,8 +25,20 @@ section.top {
       padding-bottom: $global-padding;
       padding-left: 3rem;
 
-      img {
-        max-width: 50px;
+      .wrapper {
+        background: rgba(255,255,255,1);
+        border-radius: 50%;
+        height: 58px;
+        width: 58px;
+        padding: 2px;
+            
+        img {
+          padding-top: 4px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 38px;
+        }
       }
       p {
         margin-bottom: 0;
