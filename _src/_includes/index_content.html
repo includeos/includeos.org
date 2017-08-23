@@ -75,6 +75,42 @@
       <p>Unikernels are a new class of operating systems. The functionality in the operating system is available as
      a library. The build systems adds the operating system into the application itself. You can read more about unikernels in general and other unikernel implementations at <a href="http://unikernel.org">unikernel.org</a>.
     </div>
+  </div>
+
+  <div class="row alling-middle">
+     <div class="small-12 column">
+      <h2>Get started</h2>
+        <pre>
+          <code class="bash">export INCLUDEOS_SRC=~/IncludeOS
+export INCLUDEOS_PREFIX=~/IncludeOS_install
+cd $HOME
+git clone https://github.com/hioa-cs/IncludeOS.git
+cd $INCLUDEOS_SRC
+./install.sh</code>
+        </pre>
+
+        <pre>
+          <code class="c++">#include <os>
+#include <iostream>
+#include <net/inet4>
+
+void Service::start(const std::string& args) {
+    auto&& inet = net::Inet4::ifconfig<0>(30.0);  // Initialize IP stack
+    auto&& server = inet.tcp().bind(80); // Set up a TCP server on port 80
+    for (auto&& ref : collection) {
+        std::cout << ref.to_string() << "\n";
+    }
+    server.on_connect([](auto conn) {
+        conn->on_read(1024, [conn](net::tcp::buffer_t buf, size n) {
+            conn->write("Hello world\n", [](auto size) {
+                std::cout << "Response written\n";
+            });
+        });
+    });
+}</code>
+</pre>
+    </div>
+  </div>
     <!--
     <div class="small-12 medium-6 column text-center hide-for-small-only">
       <img class="squirrel" src="/assets/img/squirrel2.png" alt="squirrel">
