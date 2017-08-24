@@ -69,17 +69,13 @@
 
 <!-- Middle section (aka the yellow section) -->
 <section id="middle" class="middle flex-child-auto">
-  <div class="row align-middle">
-    <div class="small-12 medium-6 column">
-      <h2>IncludeOS is a Unikernel</h2>
-      <p>Unikernels are a new class of operating systems. The functionality in the operating system is available as
-     a library. The build systems adds the operating system into the application itself. You can read more about unikernels in general and other unikernel implementations at <a href="http://unikernel.org">unikernel.org</a>.
-    </div>
-  </div>
 
   <div class="row alling-middle">
      <div class="small-12 column">
       <h2>Get started</h2>
+      <p>Installing IncludeOS on Linux or OS X typically takes around 10 minuttes. Once installed
+       we suggest looking at and booting a few of the examples to familarize yourself with the system.
+      </p>
         <pre>
           <code class="bash">export INCLUDEOS_SRC=~/IncludeOS
 export INCLUDEOS_PREFIX=~/IncludeOS_install
@@ -88,22 +84,25 @@ git clone https://github.com/hioa-cs/IncludeOS.git
 cd $INCLUDEOS_SRC
 ./install.sh</code>
         </pre>
+        <p>Once installed have a look in ~/IncludeOS/examples/demo_service. In order to boot the application just type "boot --create-bridge ." and the applcation should build and run. </p>
 
+
+        <p>We strive to make it easy to create fast and useful services. The below code will set up a simple "Hello World" TCP service and happliy talk to anyone connecting.</p>
         <pre>
-          <code class="c++">#include <os>
-#include <iostream>
-#include <net/inet4>
+          <code class="c++">#include &lt;os&gt;
+#include &lt;iostream&gt;
+#include &lt;net/inet4&gt;
 
-void Service::start(const std::string& args) {
-    auto&& inet = net::Inet4::ifconfig<0>(30.0);  // Initialize IP stack
-    auto&& server = inet.tcp().bind(80); // Set up a TCP server on port 80
-    for (auto&& ref : collection) {
-        std::cout << ref.to_string() << "\n";
+void Service::start(const std::string&amp; args) {
+    auto&amp;&amp; inet = net::Inet4::ifconfig&lt;0&gt;(30.0);  // Initialize IP stack
+    auto&amp;&amp; server = inet.tcp().bind(80); // Set up a TCP server on port 80
+    for (auto&amp;&amp; ref : collection) {
+        std::cout &lt;&lt; ref.to_string() &lt;&lt; &quot;\n&quot;;
     }
     server.on_connect([](auto conn) {
-        conn->on_read(1024, [conn](net::tcp::buffer_t buf, size n) {
-            conn->write("Hello world\n", [](auto size) {
-                std::cout << "Response written\n";
+        conn-&gt;on_read(1024, [conn](net::tcp::buffer_t buf, size n) {
+            conn-&gt;write(&quot;Hello world\n&quot;, [](auto size) {
+                std::cout &lt;&lt; &quot;Response written\n&quot;;
             });
         });
     });
