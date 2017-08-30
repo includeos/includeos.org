@@ -71,25 +71,20 @@
 <section id="middle" class="middle flex-child-auto">
 
   <div class="row alling-middle">
-     <div class="small-12 column">
+     <div class="small-12 large-8 column">
       <h2>Get started</h2>
       <p>Installing IncludeOS on Linux or OS X typically takes around 10 minuttes. Once installed
        we suggest looking at and booting a few of the examples to familarize yourself with the system.
       </p>
-        <pre>
-          <code class="bash">export INCLUDEOS_SRC=~/IncludeOS
+        <pre><code class="bash">export INCLUDEOS_SRC=~/IncludeOS
 export INCLUDEOS_PREFIX=~/IncludeOS_install
 cd $HOME
 git clone https://github.com/hioa-cs/IncludeOS.git
 cd $INCLUDEOS_SRC
-./install.sh</code>
-        </pre>
-        <p>Once installed have a look in ~/IncludeOS/examples/demo_service. In order to boot the application just type "boot --create-bridge ." and the applcation should build and run. </p>
-
-
+./install.sh</code></pre>
+        <p>Once installed have a look in ~/IncludeOS/examples/demo_service. In order to boot the application just type "boot --create-bridge ." and the applcation should build and run.</p>
         <p>We strive to make it easy to create fast and useful services. The below code will set up a simple "Hello World" TCP service and happliy talk to anyone connecting.</p>
-        <pre>
-          <code class="c++">#include &lt;os&gt;
+        <pre><code class="c++">#include &lt;os&gt;
 #include &lt;iostream&gt;
 #include &lt;net/inet4&gt;
 
@@ -106,8 +101,7 @@ void Service::start(const std::string&amp; args) {
             });
         });
     });
-}</code>
-</pre>
+}</code></pre>
     </div>
   </div>
     <!--

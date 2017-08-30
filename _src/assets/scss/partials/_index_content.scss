@@ -5,7 +5,7 @@ section.top {
   position: relative;
 
   .button-group {
-    margin: $global-margin 0 ($global-margin*2) 0;
+    margin: $global-margin 0 ($global-margin*2) $global-margin;
 
     .button {
       color: white;
@@ -31,7 +31,7 @@ section.top {
         height: 58px;
         width: 58px;
         padding: 2px;
-            
+
         img {
           padding-top: 4px;
           display: block;
@@ -66,7 +66,7 @@ section.middle {
   }
 
   p {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   @include breakpoint(small only) {
@@ -80,9 +80,14 @@ section.middle {
 section.last {
   background-color: lighten($black, 2);
   color: $white;
+  padding: $global-padding 0 $global-padding*3 0 ;
 
   img {
-    max-width: 100px;
+     margin: 1rem 0;
+      max-width: 150px;
+      max-height: 90px;
+      height: auto;
+      width: auto;
   }
 }
 

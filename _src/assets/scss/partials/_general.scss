@@ -121,3 +121,17 @@ span.tags {
     color: $black;
   }
 }
+
+pre {
+   margin: 1rem 0;
+}
+
+code.hljs {
+   padding: 1.5rem;
+   border: none;
+   font-size: .9rem;
+}
+
+p {
+   margin-bottom: .5rem;
+}

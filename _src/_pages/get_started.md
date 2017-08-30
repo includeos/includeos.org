@@ -18,10 +18,10 @@ However, it is recommended to choose a custom location as well as select the com
 To do this we can edit ~/.bashrc (in the home folder), adding these lines at the end of the file:
 
 ```bash
-    export CC=/usr/bin/clang-3.8
-    export CXX=/usr/bin/clang++-3.8
-    export INCLUDEOS_PREFIX=<HOME FOLDER>/includeos
-    export PATH=$PATH:$INCLUDEOS_PREFIX/bin
+export CC=/usr/bin/clang-3.8
+export CXX=/usr/bin/clang++-3.8
+export INCLUDEOS_PREFIX=<HOME FOLDER>/includeos
+export PATH=$PATH:$INCLUDEOS_PREFIX/bin
 ```
 
 This will also crucially make the boot program visible globally, so that you can simply run ```boot <myservice>``` inside any service folder.
@@ -31,9 +31,9 @@ This will also crucially make the boot program visible globally, so that you can
 **NOTE:** The script will install packages and create a network bridge.
 
 ```bash
-    $ git clone https://github.com/hioa-cs/IncludeOS
-    $ cd IncludeOS
-    $ ./install.sh
+$ git clone https://github.com/hioa-cs/IncludeOS
+$ cd IncludeOS
+$ ./install.sh
 ```
 
 **The script will:**
@@ -53,7 +53,7 @@ Configuration of your IncludeOS installation can be done inside `build/` with `c
 A successful setup enables you to build and run a virtual machine. Running:
 
 ```bash
-    $ ./test.sh
+$ ./test.sh
 ```
 
 will build and run [this example service](./examples/demo_service/service.cpp).
@@ -68,14 +68,14 @@ More information is [available on the wiki](https://github.com/hioa-cs/IncludeOS
 **Example:**
 
 ```bash
-    $ cp -r seed/service ~/my_service
-    $ cd ~/my_service
-    $ emacs service.cpp
-    ... add your code
-    $ mkdir build && cd build
-    $ cmake ..
-    $ make
-    $ boot my_service
+$ cp -r seed/service ~/my_service
+$ cd ~/my_service
+$ emacs service.cpp
+... add your code
+$ mkdir build && cd build
+$ cmake ..
+$ make
+$ boot my_service
 ```
 
 Take a look at the [examples](./examples) and the [tests](./test). These all started out as copies of the same seed.
