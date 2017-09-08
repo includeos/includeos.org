@@ -1,14 +1,15 @@
 //Top section (aka the blue section)
 
 section.top {
-  background-color: $blue;
+  background-color: $yellow;
   position: relative;
 
   .button-group {
     margin: $global-margin 0 ($global-margin*2) $global-margin;
 
     .button {
-      color: white;
+      color: black;
+      border-color: black;
     }
 
     a {
@@ -17,7 +18,7 @@ section.top {
   }
 
   h1, h2, p {
-    color: $white;
+    color: black;
   }
 
   .list {
@@ -48,8 +49,8 @@ section.top {
 }
 //Middle section (aka the yellow section)
 section.middle {
-  background-color: $yellow;
-  color: $black;
+  background-color: $blue;
+  color: $white;
 
   .squirrel {
     max-width: 60%;
