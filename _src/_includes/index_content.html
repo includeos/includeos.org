@@ -9,9 +9,8 @@
       <p>IncludeOS applications boot in tens of milliseconds and require only a few megabytes of disk and memory. </p>
       <div class="row">
         <div class="stacked-for-small button-group">
-          <a class="primary hollow button" href="https://github.com/hioa-cs/IncludeOS/tarball/master">DOWNLOAD TARBALL</a>
-          <a class="primary hollow button" href="https://github.com/hioa-cs/IncludeOS/zipball/master">DOWNLOAD ZIP</a>
-          <a class="primary hollow button" href="https://github.com/hioa-cs/IncludeOS">VIEW ON GITHUB</a>
+          <a class="primary hollow button" href="https://github.com/hioa-cs/IncludeOS">VIEW ON GITHUB</a>          
+          <a class="primary hollow button" href="https://gitter.im/hioa-cs/IncludeOS">CHAT ON GITTER</a>          
         </div>
       </div>
     </div>
@@ -76,13 +75,11 @@
       <p>Installing IncludeOS on Linux or OS X typically takes around 10 minuttes. Once installed
        we suggest looking at and booting a few of the examples to familarize yourself with the system.
       </p>
-        <pre><code class="bash">export INCLUDEOS_SRC=~/IncludeOS
+        <pre><code class="bash">git clone https://github.com/hioa-cs/IncludeOS.git
+cd IncludeOS
 export INCLUDEOS_PREFIX=~/IncludeOS_install
-cd $HOME
-git clone https://github.com/hioa-cs/IncludeOS.git
-cd $INCLUDEOS_SRC
 ./install.sh</code></pre>
-        <p>Once installed have a look in ~/IncludeOS/examples/demo_service. In order to boot the application just type "boot --create-bridge ." and the applcation should build and run.</p>
+        <p>For detailed instructions see <a href="/get-started.html">get</a>. Once installed have a look in IncludeOS/examples/demo_service. In order to boot the application just type "boot --create-bridge ." and the application should build and run.</p>
         <p>We strive to make it easy to create fast and useful services. The below code will set up a simple "Hello World" TCP service and happliy talk to anyone connecting.</p>
         <pre><code class="c++">#include &lt;os&gt;
 #include &lt;iostream&gt;
@@ -114,7 +111,7 @@ void Service::start(const std::string&amp; args) {
 <!-- Last section (where you can brag) -->
 <section id="last" class="last flex-child-auto">
   <div class="row align-middle align-center text-center">
-
+   <!--
     <div class="small-12 column">
       <h2>Major contributions to IncludeOS by these fine folks:</h2>
     </div>
@@ -128,6 +125,6 @@ void Service::start(const std::string&amp; args) {
     <div class="small-6 medium-2 column">
       <a href="http://www.unikernel.org/"><img src="/assets/img/clients/unikernel-logo-inverted.png"></a>
     </div>
-
+   -->
   </div>
 </section>
