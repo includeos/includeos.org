@@ -4,7 +4,7 @@ title:  "IncludeOS 0.10 Released"
 author: ingve
 date:   2017-01-15 08:00:42 +0200
 categories: [includeos, release]
-hero: /assets/img/posts/fireworks.jpg
+hero: /assets/img/posts/yellow/sun-flower-491173_640.jpg
 author-image: /assets/img/authors/ingve.jpg
 summary: "We are proud to announce the release of IncludeOS version 0.10. Highlights from this release include partial POSIX support, a user-friendly `boot` tool to easily build and run IncludeOS services, and a revamped cross-platform build system based on CMake."
 

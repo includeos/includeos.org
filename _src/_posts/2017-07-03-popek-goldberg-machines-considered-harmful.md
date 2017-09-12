@@ -3,7 +3,7 @@ layout: post
 title:  "Popek-Goldberg machines considered harmful"
 author: perbu
 date:   2017-07-03 09:00:42 +0200
-hero: /assets/img/posts/server-90389_1920.jpg
+hero: /assets/img/posts/yellow/chestnut-leaves-228072_640.jpg
 categories: [popek-goldberg, virtual machines, ukvm]
 author-image: /assets/img/authors/perbu.jpg
 summary: "Modern virtual machines are based on a '74 theorem made by Popek and Goldberg. It outlines how virtual machines should be equivalent to physical machines, something that makes transitioning to virtual machines easier. Today this equivalence is harmfull as it ads a lot of complexity to our virtual machines. If we discard equivance virtual machines can be made a lot simpler."

@@ -4,7 +4,7 @@ title:  "Non-intrusive real time stack sampling in IncludeOS"
 author: alf
 date:   2016-08-16 07:43:42 +0200
 categories: [profiling]
-hero: /assets/img/posts/2000px-Data_stack.svg.png
+hero: /assets/img/posts/yellow/macro-56410_640.jpg
 author-image: /assets/img/authors/alf.jpg
 summary: "By inserting a stack gathering call into the Programmable Interval Timer, we can regularly gather stack samples without bias. The gathering will happen at the frequency of the PIT, while the PIT handler itself will only schedule timers that are expired. This gives us an easy and non-intrusive way of profiling IncludeOS Applications."
 ---

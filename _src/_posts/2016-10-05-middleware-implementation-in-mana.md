@@ -4,7 +4,7 @@ title:  "Middleware implementation in Mana"
 author: andreas
 date:   2016-10-05 15:49:42 +0200
 categories: [mana, middleware]
-hero: /assets/img/posts/squirrel-mana.jpg
+hero: /assets/img/posts/yellow/flower-195897_640.jpg
 author-image: /assets/img/authors/andreas.jpg
 summary: "Mana is a C++ web application framework built for IncludeOS. In this post I will explain the concept *middleware*; what it is used for, how we have implemented it and other parts related to it."
 ---

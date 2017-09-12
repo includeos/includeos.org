@@ -5,7 +5,7 @@ author: ingve
 date:   2016-07-29 15:43:42 +0200
 categories: [cmake, build]
 author-image: /assets/img/authors/ingve.jpg
-hero: /assets/img/posts/cmake.png
+hero: /assets/img/posts/yellow/foliage-78767_640.jpg
 ---
 Diving into a new and unknown code base can be a bit unsettling. Getting a high-level overview of the overall structure and architecture of the code base is vital if you want to be productive as soon as possible.
 
