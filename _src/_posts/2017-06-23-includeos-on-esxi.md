@@ -9,7 +9,7 @@ hero: /assets/img/posts/yellow/flower-234982_640.jpg
 summary: "IncludeOS has, since its inception, supported the paravirtualized drivers for virtio-net. Our deployment platforms where the ones that support virtio. KVM/Qemu, Virtualbox, Openstack and the Google Compute Engine.  We’ve now expanded our support adding ESXi to our list of supported platforms. ESXi is the hypervisor powering all of VMware's enterprise products. Here is how this support came about."
 ---
 
-![Vmware Logo]({{site-url}}/media/vmware-logo-500px.png){:style="float: right;margin-right: 7px;margin-top: 7px;"}
+![Vmware Logo]({{site-url}}/assets/img/posts/vmware-logo-500px.png){:style="float: right;margin-right: 7px;margin-top: 7px;"}
 
 IncludeOS has, since its inception, supported the paravirtualized drivers for virtio-net. Our deployment platforms where the ones that support virtio. KVM/Qemu, Virtualbox, Openstack and the Google Compute Engine.  We’ve now expanded our support adding ESXi to our list of supported platforms. [ESXi](https://www.vmware.com/products/vsphere-hypervisor.html) is the hypervisor powering all of VMware's enterprise products. Here is how this support came about.
 

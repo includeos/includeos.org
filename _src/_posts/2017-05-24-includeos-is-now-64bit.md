@@ -4,7 +4,7 @@ title:  "IncludeOS is now 64 bit"
 author: perbu
 date:   2017-05-24 14:30:42 +0200
 categories: [64 bit, includeos, architectures]
-hero: /assets/img/posts/yellow/macro-191090_640.jpg
+hero: /assets/img/posts/blue/forget-me-not-1365857_640.jpg
 author-image: /assets/img/authors/perbu.jpg
 summary: "For historical reasons IncludeOS started out as 32 bit. However, as
 the world is leaving behind 32 bit code as legacy, we’ve always known
