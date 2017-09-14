@@ -5,7 +5,7 @@ author: perbu
 date:   2017-06-23 09:00:42 +0200
 categories: [esxi, vmware, platforms]
 author-image: /assets/img/authors/perbu.jpg
-hero: /assets/img/posts/yellow/flower-234982_640.jpg
+hero: /assets/img/posts/vmware-logo-500px.png
 summary: "IncludeOS has, since its inception, supported the paravirtualized drivers for virtio-net. Our deployment platforms where the ones that support virtio. KVM/Qemu, Virtualbox, Openstack and the Google Compute Engine.  We’ve now expanded our support adding ESXi to our list of supported platforms. ESXi is the hypervisor powering all of VMware's enterprise products. Here is how this support came about."
 ---
 
