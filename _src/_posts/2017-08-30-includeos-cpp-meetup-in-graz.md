@@ -11,6 +11,8 @@ summary: "On Thursday the 5th of October there will be a C++ meetup in Graz, Aus
 
 On Thursday the 5th of October there will be a meetup in Graz, Austria where the goal is to produce a simple homepage for the [Graz Qt/C++ local group](https://www.meetup.com/Graz-Qt-C-11-Meetup/) using IncludeOS. If you're in the area you should go. You can sign up for the meetup [here](https://www.meetup.com/Graz-Qt-C-11-Meetup/events/240890363/).
 
+![Graz, Austria]({{site-url}}/assets/img/posts/graz-443815_640.jpg){:style="float: right;margin-right: 7px;margin-top: 7px;"}
+
 Turns out there was a [IncludeOS meetup] back in January 2017. For us it is really interesting to see how other people present IncludeOS. Slides are [here](https://gitlab.com/qtcpp-user-group-graz/Cpp_presentations/blob/master/IncludeOS/IncludeOS.pdf).
 
 If anyone would like some help in setting up a Meetup with IncludeOS as the topic, feel free to reach out. We might even show up - can't promise anything - but we're naturally very keen on talking to IncludeOS users and developers.
