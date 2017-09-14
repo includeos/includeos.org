@@ -3,10 +3,10 @@ layout: post
 title:  "Popek-Goldberg machines considered harmful"
 author: perbu
 date:   2017-07-03 09:00:42 +0200
-hero: /assets/img/posts/yellow/chestnut-leaves-228072_640.jpg
+hero: /assets/img/posts/ibm-370.jpg
 categories: [popek-goldberg, virtual machines, ukvm]
 author-image: /assets/img/authors/perbu.jpg
-summary: "Modern virtual machines are based on a '74 theorem made by Popek and Goldberg. It outlines how virtual machines should be equivalent to physical machines, something that makes transitioning to virtual machines easier. Today this equivalence is harmfull as it ads a lot of complexity to our virtual machines. If we discard equivance virtual machines can be made a lot simpler."
+summary: "Modern virtual machines are based on a '74 theorem made by Popek and Goldberg. It outlines how virtual machines should be equivalent to physical machines, something that makes transitioning to virtual machines easier. Today this equivalence is harmful as it ads a lot of complexity to our virtual machines. If we discard equivalence virtual machines can be made a lot simpler."
 ---
 
 Modern virtual machines are based on a ‘74 [Paper](http://dl.acm.org/citation.cfm?id=361073) by [Gerald J. Popek](https://en.wikipedia.org/wiki/Gerald_J._Popek) and [Robert P. Goldberg](https://en.wikipedia.org/wiki/Robert_P._Goldberg). It provides the theoretical framework for how virtual machines should behave in order to be efficient and secure. It’s a brilliant paper as it outlines how to take something that sounds relatively abstract and complex and turns it into something very concrete. In order to have proper virtual machines you only need some silicon support and some software and this paper outlines how they should function.
@@ -14,7 +14,7 @@ Modern virtual machines are based on a ‘74 [Paper](http://dl.acm.org/citation.
 Basically the paper puts forward three requirements for a platform to be an efficient, isolated duplicate of a real machine;
  
 1) Equivalence / Fidelity
-: A virtual machine running under a virtual machine monitor (VMM) should exhibit behaviour essentially identical to running directly on a machine.
+: A virtual machine running under a virtual machine monitor (VMM) should exhibit behavior essentially identical to running directly on a machine.
 
 2) Resource control / Safety
 : The VMM must be in complete control of the virtualized resources.
@@ -28,13 +28,17 @@ Requirement 2) assures a reasonable level of isolation. The VM cannot address me
  
 And requirement 1) - equivalence. This requirement makes sure the virtualized hardware provides the same interface as physical hardware would. This means that the VMs of today have PCI buses filled with virtual PCI cards that can provide the exact same interface (port io, DMA) as physical machines do. The are initiated in real mode and boot through the same legacy mechanisms as the original PC did. This allows the world to transition from physical to virtual machines. It allows operating system vendors to rely on the abstractions provided by the Virtual Machine Monitor (VMM) to maintain a single installation target. The same installation media can be used to install both virtual and physical hosts.
 
+![IBM System/370]({{site-url}}/assets/img/posts/ibm-370.jpg){:style="float: right;margin-right: 7px;margin-top: 7px;"}
+The IBM System/370 was the first commercially available machine adhering the Popek-Goldberg virtualization requirements. 
+
+
 ## Why we don't need equivalence
 
 I have a problem with the Equivalence requirement. It requires a lot of complexity. Why would we have the need to emulate a complete PC in a virtual machine deployed in the cloud? We don’t need BIOS, sound cards, floppy drives, GPUs or bluetooth hardware if what we’re building are web services. We don’t even need a PCI bus.
  
 We basically need console-, network- and block interfaces. Everything else should go. As the 2015 [VENOM attack](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3456) showed there is risk in having support for legacy hardware. If you unfamiliar with the VENOM attack it used a flaw in the virtual floppy hardware to break out of the virtual machines. It made the hardware virtualization provided by modern CPUs irrelevant by attacking the emulated machine itself.
  
-Booting virtual machines doesn’t need to happen through initializing the CPU in real mode (16 bit). The VMM and the hypervisor can setup the VM for us and just start executing it. We can shave off several seconds of the boot process if we do. We don’t need to emulate a PCI bus in order to have networking or disk access. We just need a simple shared memory buffer along with some signalling capabilities (interrupts).  Removing the RS232 emulation from our virtual consoles will also significantly affect boot performance. With RS232 we’re writing one byte at a time to the serial port. It is the most inefficient way to interact with hardware on a computer. It actually delays the boot noticeably.
+Booting virtual machines doesn’t need to happen through initializing the CPU in real mode (16 bit). The VMM and the hypervisor can setup the VM for us and just start executing it. We can shave off several seconds of the boot process if we do. We don’t need to emulate a PCI bus in order to have networking or disk access. We just need a simple shared memory buffer along with some signaling capabilities (interrupts).  Removing the RS232 emulation from our virtual consoles will also significantly affect boot performance. With RS232 we’re writing one byte at a time to the serial port. It is the most inefficient way to interact with hardware on a computer. It actually delays the boot noticeably.
 
 ## Introducing the Unikernel monitor
  
