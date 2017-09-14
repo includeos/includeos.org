@@ -3,9 +3,10 @@ layout: post
 title:  "IncludeOS on Solo5 and ukvm"
 author: alfred
 date:   2017-08-29 09:00:42 +0200
-categories: blog
+categories: [ukvm, solo5, hypervisors, development]
 author-image: /assets/img/authors/alfred.jpg
-hero: /assets/img/posts/blue/blueberries-2270379_640.jpg
+hero: /assets/img/posts/ibm-research-logo.png
+summary: "IncludeOS now supports the worlds tinyest hypervisor, ukvm. The minimalist hypervisor ads new potential use cases to IncludeOS."
 
 ---
 
@@ -20,11 +21,11 @@ After discussing this with [Alf] we looked at our x86 PC platform code and sighe
 
 While I immediately realized we’ll need some kind of async DMA interface to get great networking performance with ukvm I also knew we had to add support for this slim, minimal beauty in IncludeOS. Being designed for virtualization and with an explicit goal of being a zero overhead operating system, the simplifications you get inside a VM when you remove the old device model is exactly the kind of technology we want to support. At that point we were in the middle of transitioning to x86_64 and I decided to also reorganize our project to support not only multiple architectures but also multiple platforms, within the same architecture. As we were finishing this work I got my favourite kind of email; someone just did something really cool with IncludeOS. The email was from Dan Williams and Ricardo Koller, including these screenshots showing IncludeOS and our demo appliance [Acorn] running on Solo5.
 
-![ukvm boot]({{site-url}}/media/ukvm-screenshot-1.png)
+![ukvm boot]({{site-url}}/assets/img/posts/ukvm-screenshot-1.png)
 
 Boot time reduced from ~300ms to ~11 ms.
 
-![ukvm boot 2]({{site-url}}/media/ukvm-screenshot-2.png)
+![ukvm boot 2]({{site-url}}/assets/img/posts/ukvm-screenshot-2.png)
 
 Solo5 device driver registered - here as a mock PCI device, later changed to remove any PCI reference.
 
@@ -44,7 +45,7 @@ Working with these projects I’ve learned to disconnect the isolation mechanism
 
 That being said, we were really happy having gone through all the hoops of supporting a full PC architecture when a large company asked us about booting and running IncludeOS on physical machines - due to some rather extreme requirements for low latency. I hadn’t tried booting a kernel I’d made for at least a couple of years, but thanks to the identity requirement everything worked as expected when I gave it a go and ran the IncludeOS SMP test on my home PC last week.
 
-![IncludeOS on bare metal]({{site-url}}/media/baremetal.jpg)
+![IncludeOS on bare metal]({{site-url}}/assets/img/posts/baremetal.jpg)
 
 
 ## Truly immutable virtual machines
