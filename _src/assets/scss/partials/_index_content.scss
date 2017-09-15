@@ -1,15 +1,14 @@
 //Top section (aka the blue section)
 
 section.top {
-  background-color: $yellow;
   position: relative;
 
   .button-group {
-    margin: $global-margin 0 ($global-margin*2) $global-margin;
+    margin: $global-margin 0 ($global-margin*8) $global-margin;
 
     .button {
-      color: black;
-      border-color: black;
+      color: $white;
+      border-color: $white;
     }
 
     a {
@@ -18,7 +17,7 @@ section.top {
   }
 
   h1, h2, p {
-    color: black;
+    color: $white;
   }
 
   .list {
@@ -27,14 +26,13 @@ section.top {
       padding-left: 3rem;
 
       .wrapper {
-        background: rgba(255,255,255,1);
         border-radius: 50%;
         height: 58px;
         width: 58px;
         padding: 2px;
 
         img {
-          padding-top: 4px;
+          padding-top: 8px;
           display: block;
           margin-left: auto;
           margin-right: auto;
@@ -49,8 +47,8 @@ section.top {
 }
 //Middle section (aka the yellow section)
 section.middle {
-  background-color: $blue;
-  color: $white;
+  background: linear-gradient(rgba(243, 200, 85, 1), rgba(252, 231, 108, 1));
+  color: $black;
 
   .squirrel {
     max-width: 60%;

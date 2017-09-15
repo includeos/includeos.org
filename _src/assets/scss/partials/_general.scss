@@ -9,7 +9,8 @@ body {
 }
 
 body.front {
-  background: #2c313a;
+  background: linear-gradient(rgba(0, 79, 108, .9), rgba(0, 38, 51, .9)), url("../img/background.jpg") no-repeat top;
+  background-size: cover;
 }
 
 body, html {
@@ -42,14 +43,14 @@ h1, h2, h3, h4 {
 }
 //Link Styles
 a {
-  color: $blue;
+  color: $black;
   position: relative;
 
   &:hover {
-    color: $yellow;
+    color: $black;
 
     &.underline:after {
-      border: 2px solid $black;
+      border: 2px solid $white;
     }
   }
 
@@ -57,7 +58,7 @@ a {
     color: $white;
 
     &:hover {
-      color: $black;
+      color: $white;
     }
   }
 
@@ -124,6 +125,7 @@ span.tags {
 
 pre {
    margin: 1rem 0;
+   box-shadow: 0px 10px 0px 0px rgba(0,0,0,1);
 }
 
 code.hljs {

@@ -1,8 +1,10 @@
 header {
-  background: $yellow;
+
+  &.normal {
+    background: linear-gradient(rgba(0, 79, 108, .9), rgba(0, 38, 51, .9));
+  }
 
   .title-bar {
-    background: $yellow;
     width: 100%;
     padding: 1.7rem;
 
@@ -23,13 +25,14 @@ header {
   }
 
   .menu {
+
     a {
       font-weight: 700;
       font-size: 1.5rem;
-      color: rgba($black, .5);
+      color: rgba($white, .5);
 
       &:hover {
-        color: $black;
+        color: $white;
       }
 
       &:not(:last-child) {
