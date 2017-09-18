@@ -31,12 +31,11 @@
    </div>
 
    <div class="menu medium-8 column text-right">
-      <a class="underline" href="/">frontpage
-      <a class="underline" href="/get-started.html">get started</a>
-<!--      <a class="underline" href="/research.html">research/media</a> -->
-      <a class="underline" href="/blog/">blog</a>
+      <a href="/" {% if page.url == "/" %}class="active"{% endif %} >frontpage</a>
+      <a href="/get-started.html" {% if page.url contains "get-started" %}class="active"{% endif %}>get started
+      </a>
+      <a href="/blog/" {% if page.url contains 'blog' %}class="active"{% endif %}>blog</a>
    </div>
-
  </div>
 </header>
 
@@ -47,7 +46,6 @@
   <div class="overlay-content">
     <a class="white" href="/"><h1>home</h1></a>
     <a class="white" href="/get-started.html"><h1>get started</h1></a>
-<!--    <a class="white" href="/research.html"><h1>research/media</h1></a> -->
     <a class="white" href="/blog/"><h1>blog</h1></a>
   </div>
 </div>
