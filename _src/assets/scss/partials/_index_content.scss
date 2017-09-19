@@ -48,7 +48,9 @@ section.top {
 //Middle section (aka the yellow section)
 section.middle {
   background: linear-gradient(rgba(243, 200, 85, 1), rgba(252, 231, 108, 1));
+
   color: $black;
+  padding: 2rem 0 4rem 0;
 
   .squirrel {
     max-width: 60%;
