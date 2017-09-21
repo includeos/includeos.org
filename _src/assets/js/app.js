@@ -14,6 +14,10 @@ console.log(Foundation.version);
 // Custom JS
 $(function() {
   hljs.initHighlightingOnLoad();
+  
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
 });
 
 var toggleMenuButton = function toggleMenuButton(){
