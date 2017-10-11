@@ -70,9 +70,13 @@ Place your custom sass in the subfolders of `_src/assets/scss/`. These folders f
 
 ### Deploy your site
 
-Rsync is used here to sync our local `_dest` with the remote host. Adjust the SSH-USER, SSH-HOST and REMOTE-PATH in the Makefile.
+Use gs-util to deploy site on Google Cloud Storage. Use the bucket www.includeos.org.
 
-Be careful with these settings since rsync is set to delete the files on the remote path!
+gsutil rsync -r ./ gs://www.includeos.org/
+
+# Rsync is used here to sync our local `_dest` with the remote host. Adjust the SSH-USER, SSH-HOST and REMOTE-PATH in the Makefile.
+
+# Be careful with these settings since rsync is set to delete the files on the remote path!
 
 Deploy with
 ```
