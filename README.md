@@ -70,18 +70,28 @@ Place your custom sass in the subfolders of `_src/assets/scss/`. These folders f
 
 ### Deploy your site
 
-Use gs-util to deploy site on Google Cloud Storage. Use the bucket www.includeos.org.
+For includeos.org we use Google Cloud Storage currently. Long term goal is to serve the web pages from IncludeOS itself, but we need some more tooling before we can do that.
 
-gsutil rsync -r ./ gs://www.includeos.org/
+Use gs-util to deploy site on Google Cloud Storage. Use the bucket www.includeos.org. Talk to Martin or Per if you need write access to this bucket.
 
-# Rsync is used here to sync our local `_dest` with the remote host. Adjust the SSH-USER, SSH-HOST and REMOTE-PATH in the Makefile.
+Install gs-util from here: https://cloud.google.com/sdk/docs/
 
-# Be careful with these settings since rsync is set to delete the files on the remote path!
+The do a produciton build of the site. Sometimes the build might result in some oddities happening on the site so removing "\_dest" before building might make sense.
 
-Deploy with
 ```
-make deploy
-```.
+rm -r \dest && npm run build
+```
+
+Now upload the to Google Cloud Storage:
+```
+gsutil -m rsync -r \_dest/ gs://www.includeos.org/
+```
+-m is to make it run in paralell so it uploads faster. 
+
+The long term goal is to make the deployment happen through make. At some point we should say:
+```
+make deploy   # this currently doesn't work.
+```
 
 # Restrictions
 
