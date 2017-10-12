@@ -79,7 +79,7 @@ Install gs-util from here: https://cloud.google.com/sdk/docs/
 The do a produciton build of the site. Sometimes the build might result in some oddities happening on the site so removing "\_dest" before building might make sense.
 
 ```
-rm -r \dest && npm run build
+rm -r \_dest && npm run build
 ```
 
 Now upload the to Google Cloud Storage:
