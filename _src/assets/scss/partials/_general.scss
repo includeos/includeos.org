@@ -101,6 +101,7 @@ span.tags {
   color: lighten($black, 20);
   padding: $global-padding/2 $global-padding ;
   margin: 0 .4rem 0 0;
+  line-height: 3rem;
 
   &:hover {
     background: rgba(214, 214, 214, .2);
