@@ -9,13 +9,11 @@ author-image: /assets/img/authors/perbu.jpg
 summary: "Live update allows you to upgrade IncludeOS applications without downtime"
 ---
 
-A defining characteristic of Unikernels is that they are immutable. In order to change a running unikernel you’ll need to build a new image and replace the image of the running server. A reboot is likely needed. Even though this is fairly quick it certainly isn't ideal.
+A defining characteristic of unikernels is that they are immutable. In order to change a running unikernel you’ll need to build a new image and replace the image of the running server. A reboot is likely needed. Even though this is fairly quick it certainly isn't ideal.
 
-Liveupdate in IncludeOS changes this. The application can now update itself without any noticeable downtime. It sounds too good to be true, but bear with me and I’ll explain how it works. It's not really that complex. It is more a consequence of the fundamentally different architecture of unikernels.
+Liveupdate in IncludeOS changes this. The application can now update itself without any noticeable downtime.  In this example I’ll use our orchestration platform, IncludeOS Mothership, as an example. However, updates don’t need to happen this way. You’re free to use any other way to upgrade.
 
-In this example I’ll use our orchestration platform, IncludeOS Mothership, as an example. However, updates don’t need to happen this way. You’re free to use any other way to upgrade.
-
-When the application boots up it establishes a connection the Mothership - we call this an “uplink”. This connection serves several purposes. Logs, metrics and other relevant data are also collected over this connection. In addition this connection is used to update the running instance through Liveupdate. You don't really need uplink to use Liveupdate as we'll see later.
+When the application boots up it establishes a connection the Mothership - we call this an “uplink”. This connection serves several purposes. Logs, metrics and other relevant data are also collected over this connection. In addition this connection is used to update the running instance through Liveupdate. 
 
 ![Liveupdate process]({{site-url}}/assets/img/posts/liveupdate.gif)
 
@@ -38,5 +36,7 @@ In practice there are few limitations on what sort of code we can execute. This 
 ## Testing live update
 
 In the latest release, [IncludeOS 0.11], you can easily test this. In the [examples folder] there is a an [example]. Here you can boot up an IncludeOS instance that will listen on a TCP port. The accompanying shell script will take the binary from the build folder and feed it to the existing instance, forcing an update. Please note that there is no security mechanisms in place here and you should under no circumstance rely on such a primitive mechanism in a production environment. The example is simplistic on purpose to show what the minimal implementation looks like.
+
+Liveupdate is not really that complex. It is more a consequence of the fundamentally different architecture of unikernels. A unikernel is _one_ entity as opposed to your traditional application that resides on top of the kernel/application split.
 
 
