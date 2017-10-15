@@ -53,6 +53,8 @@ Git clone this repository, or download it into a directory of your choice. Insid
 - Run `npm run build`  
   - This builds your site for production, with minified CSS and JavaScript. Run this before you deploy your site!  
 
+You can also run `make build` to do this.
+
 ### Foundation for Sites Components
 
 We don't want to include unused CSS or JavaScript.
@@ -78,8 +80,15 @@ Install gs-util from here: https://cloud.google.com/sdk/docs/
 
 The do a produciton build of the site. Sometimes the build might result in some oddities happening on the site so removing "\_dest" before building might make sense.
 
+One gsutil is in place you have the following make targets available:
+ * deploy, delete the folder, build the website and sync the whole thing over
+ * partial, sync over the website, ignore the assets. This is a lot faster when only updating the textual content
+ * rebuild, delete and rebuild the local content
+ * build, just build it
+ * install, install all the crap needed to build the site locally.
+
 ```
-rm -r \_dest && npm run build
+rm -r _dest && npm run build
 ```
 
 Now upload the to Google Cloud Storage:

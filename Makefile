@@ -1,17 +1,23 @@
-# use tabs for indentation!
 
-SSH-USER = my-username
-SSH-HOST = my-host
-REMOTE-PATH = /my-remote-path with trailing slash/
-
+# Full sync with remote
 deploy:
-  rsync -cavze ssh --delete ./_dest/ $(SSH-USER)@$(SSH-HOST):$(REMOTE-PATH)
+	rm -rf _dest
+	npm build run
+	gsutil -m rsync -r _dest/ gs://www.includeos.org/
+
+# Skip assets (most of the time is spent here)
+partial: 
+	gsutil -m rsync -r -x ^assets/ _dest/ gs://www.includeos.org/
+
+rebuild:
+	rm -r _dest
+	npm run build
+
+build:
+	npm run build
 
 install:
-  bundle install
-  npm install
-  bower install
+	bundle install
+	npm install
+	bower install
   # composer install
-
-ssh:
-  ssh $(SSH-USER)@$(SSH-HOST)
