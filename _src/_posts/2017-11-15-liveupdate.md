@@ -39,4 +39,8 @@ In the latest release, [IncludeOS 0.11], you can easily test this. In the [examp
 
 Liveupdate is not really that complex. It is more a consequence of the fundamentally different architecture of unikernels. A unikernel is _one_ entity as opposed to your traditional application that resides on top of the kernel/application split.
 
+[IncludeOS 0.11]: /blog/2017/includeos-0.11-released.html
+[example]: https://github.com/hioa-cs/IncludeOS/tree/v0.11.0/examples/LiveUpdate
+[examples folder]: https://github.com/hioa-cs/IncludeOS/tree/v0.11.0/examples/
+
 
