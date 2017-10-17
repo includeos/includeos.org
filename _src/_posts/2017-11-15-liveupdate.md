@@ -20,7 +20,7 @@ When the application boots up it establishes a connection the Mothership - we ca
 ## How an upgrade happens
 When the Mothership decides an instance needs an update it will push down a new image over the uplink. IncludeOS will store this in memory. Once the new image is in place a callback in the application is called which serializes the state of the application. Since there is no kernel/application split the application can serialize everything, including open sockets, file descriptors, etc. The application sees everything that happens inside the virtual machine. This opens a lot of interesting opportunities, but we’ll get to those in other blogposts.
 
-Once state is stored we just boot the new application. Likely it’ll be take just a few milliseconds. Once the new application is booted up IncludeOS will issue a callback with a reference to where the previous state was stored. The application now deserializes this state and will resume execution. 
+Once state is stored we just boot the new application. Likely it’ll take just a few milliseconds. Once the new application is booted up IncludeOS will issue a callback with a reference to where the previous state was stored. The application now deserializes this state and will resume execution. 
 
 We might lose a packet or two during the store/boot/restore-state so a TCP connection or two might stutter a bit. From the time we serialize the state of our application to we deserialize it the application is effectively down, interrupts are ignored. Just how long this period is depends on the application and the platform it is running on. If you have hundreds of megabytes of state it'll take time to jot all this down. If you have a load balancer with a just a few thousand connections running through it it'll be lightning fast. 
 
@@ -42,5 +42,3 @@ Liveupdate is not really that complex. It is more a consequence of the fundament
 [IncludeOS 0.11]: /blog/2017/includeos-0.11-released.html
 [example]: https://github.com/hioa-cs/IncludeOS/tree/v0.11.0/examples/LiveUpdate
 [examples folder]: https://github.com/hioa-cs/IncludeOS/tree/v0.11.0/examples/
-
-
