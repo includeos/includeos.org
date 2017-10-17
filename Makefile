@@ -2,7 +2,7 @@
 # Full sync with remote
 deploy:
 	rm -rf _dest
-	npm build run
+	npm run build
 	gsutil -m rsync -r _dest/ gs://www.includeos.org/
 
 # Skip assets (most of the time is spent here)
