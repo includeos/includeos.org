@@ -18,7 +18,7 @@ When the application boots up it establishes a connection the Mothership - we ca
 ![Liveupdate process]({{site-url}}/assets/img/posts/liveupdate.gif)
 
 ## How an upgrade happens
-When the Mothership decides an instance needs an update it will push down a new image over the uplink. IncludeOS will store this in memory. Once the new image is in place a callback in the application is called which serializes the state of the application. Since there is no kernel/application split the application can serialize everything, including open sockets, file descriptors, etc. The application sees everything that happens inside the virtual machine. There are numerous over exciting opportunities from having everything run in a single context, but we’ll get to those in other blog posts.
+When the Mothership decides an instance needs an update it will push down a new image over the uplink. IncludeOS will store this in memory. Once the new image is in place a callback in the application is called which serializes the state of the application. Since there is no kernel/application split the application can serialize everything, including open sockets, file descriptors, etc. The application sees everything that happens inside the virtual machine. There are numerous exciting opportunities from having everything run in a single context, but we’ll get to those in other blog posts.
 
 Once the state is stored we just boot the new application. Likely it’ll take only a few milliseconds. Once the new application is booted up IncludeOS will issue a callback with a reference to where the previous state was stored. The application now deserializes this state and will resume execution. 
 
