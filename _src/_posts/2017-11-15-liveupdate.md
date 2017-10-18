@@ -22,7 +22,7 @@ When the Mothership decides an instance needs an update it will push down a new 
 
 Once the state is stored we just boot the new application. Likely it’ll take only a few milliseconds. Once the new application is booted up IncludeOS will issue a callback with a reference to where the previous state was stored. The application now deserializes this state and will resume execution. 
 
-We might lose a packet or two during the store/boot/restore-state so a TCP connection or two might stutter a bit. From the time we serialize the state of our application to we deserialize it the application is effectively down, interrupts are ignored. Just how long this period depends on the application and the platform it is running on. If you have hundreds of megabytes of state, it'll take time to jot all this down. If you have a load balancer with a just a few thousand connections running through it'll be lightning fast. 
+We might lose a packet or two during the store/boot/restore-state so a TCP connection or two might stutter a bit. From the time we serialize the state of our application until we deserialize it the application is effectively down, interrupts are ignored. Just how long this period depends on the application and the platform it is running on. If you have hundreds of megabytes of state, it'll take time to jot all this down. If you have a load balancer with a just a few thousand connections running through it'll be lightning fast. 
 
 We’ve had this working since January. It's been applied to a number of applications. We've done a web server, IRCd server, load balancer and a few others. It is perfect for transaction-oriented workloads like HTTP. 
 
