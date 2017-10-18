@@ -13,18 +13,18 @@ A defining characteristic of unikernels is that they are immutable. In order to 
 
 Liveupdate in IncludeOS changes this. The application can now update itself without any noticeable downtime.  In this example I’ll use our orchestration platform, IncludeOS Mothership, as an example. However, updates don’t need to happen this way. You’re free to use any other way to upgrade.
 
-When the application boots up it establishes a connection the Mothership - we call this an “uplink”. This connection serves several purposes. Logs, metrics and other relevant data are also collected over this connection. In addition this connection is used to update the running instance through Liveupdate. 
+When the application boots up it establishes a connection to Mothership - we call this an “uplink”. This connection serves several purposes. Logs, metrics and other relevant data are also collected over this connection. In addition, this connection is used to update the running instance through Liveupdate.
 
 ![Liveupdate process]({{site-url}}/assets/img/posts/liveupdate.gif)
 
 ## How an upgrade happens
 When the Mothership decides an instance needs an update it will push down a new image over the uplink. IncludeOS will store this in memory. Once the new image is in place a callback in the application is called which serializes the state of the application. Since there is no kernel/application split the application can serialize everything, including open sockets, file descriptors, etc. The application sees everything that happens inside the virtual machine. This opens a lot of interesting opportunities, but we’ll get to those in other blogposts.
 
-Once state is stored we just boot the new application. Likely it’ll take just a few milliseconds. Once the new application is booted up IncludeOS will issue a callback with a reference to where the previous state was stored. The application now deserializes this state and will resume execution. 
+Once state is stored we just boot the new application. Likely it’ll take just a few milliseconds. Once the new application is booted up IncludeOS will issue a callback with a reference to where the previous state was stored. The application now deserializes this state and will resume execution.
 
-We might lose a packet or two during the store/boot/restore-state so a TCP connection or two might stutter a bit. From the time we serialize the state of our application to we deserialize it the application is effectively down, interrupts are ignored. Just how long this period is depends on the application and the platform it is running on. If you have hundreds of megabytes of state it'll take time to jot all this down. If you have a load balancer with a just a few thousand connections running through it it'll be lightning fast. 
+We might lose a packet or two during the store/boot/restore-state so a TCP connection or two might stutter a bit. From the time we serialize the state of our application to when we deserialize it the application is effectively down and interrupts are ignored. Just how long this period is depends on the application and the platform it's running on. If you have hundreds of megabytes of state it'll take time to jot all this down. If you have a load balancer with a just a few thousand connections, running through it'll be lightning fast.
 
-We’ve had this working since January. It's been applied to a number of applications. We've done a web server, IRCd server, load balancer and a few others. It is perfect for transaction oriented workloads like HTTP. 
+We’ve had this working since January. It's been applied to a number of applications. We've done a web server, IRCd server, load balancer and a few others. It is perfect for transaction oriented workloads like HTTP.
 
 ## Booting other operating systems with Liveupdate
 
