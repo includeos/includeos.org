@@ -1,8 +1,8 @@
 # Site settings
 language:               ""
 title:                  "includeOS"
-description:            "Site description"
-google-verification:    ""
+description:            "IncludeOS is an open source library operating system."
+# google-verification:    ""
 
 # Handling Reading
 include:
