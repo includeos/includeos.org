@@ -2,6 +2,11 @@
    color: $black;
    padding-bottom: 3rem;
 
+   a {
+       text-decoration: underline;
+       color: $blue;
+   }
+
 
    h1 {
       text-align: center;
