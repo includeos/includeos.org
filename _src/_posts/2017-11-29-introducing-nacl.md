@@ -6,10 +6,10 @@ date:   2017-11-29 10:00:42 +0200
 categories: [feature]
 hero: /assets/img/posts/squirrel-493790_640.jpg
 author-image: /assets/img/authors/annika.jpg
-summary: "NaCl is configuration language for IncludeOS that allows you to express firewall rules in a easy and efficient manner."
+summary: "NaCl is a configuration language for IncludeOS that allows you to express firewall rules in an easy and efficient manner."
 ---
 
-IncludeOS now has a routing firewall built into it. It is, like everything else we do, implemented in C++. Initially, we thought we would write firewall and routing rules in C++. Writing code isn’t ideal, however, as people aren’t interested in programming C++ just to open a port or allow a new host access to the network. We needed a level of abstraction to provide some ease of use to our product. So, how do you define a new language for configuring a unikernel firewall?
+IncludeOS now has a routing firewall built into it. It is, like everything else we do, implemented in C++. Initially, we thought we would write firewall and routing rules in C++. Writing code isn’t ideal however, as people aren’t interested in programming C++ just to open a port or allow a new host access to the network. We needed a level of abstraction to provide some ease of use to our product. So, how do you define a new language for configuring a unikernel firewall?
 
 A fundamental characteristic of unikernels is the lack of distinction between code and configuration at runtime. If you have a running instance and you want to reconfigure it, you’ll need to rebuild the image. It may sound cumbersome, but in reality, it isn't. The update process provided by [LiveUpdate] means you can change, build and deploy a change in a matter of seconds.
 
@@ -82,17 +82,17 @@ Filter::IP my_filter {
     if (ct.state == established) {
         log(“Connection tracking state == established: Accepting\n”)
         accept
-}
+    }
 
-Filter::TCP {
-    log(“This is a TCP packet\n”)
-    if (ip.daddr == eth0.address and tcp.dport == 80) {
-        log(“Accepting TCP packet with destination address ”, ip.daddr, “ and destination port ”, tcp.dport, “\n”)
-        accept
-		}
-	}
+    Filter::TCP {
+        log(“This is a TCP packet\n”)
+        if (ip.daddr == eth0.address and tcp.dport == 80) {
+            log(“Accepting TCP packet with destination address ”, ip.daddr, “ and destination port ”, tcp.dport, “\n”)
+            accept
+		    }
+    }
     log(“Default verdict: Dropping packet\n”)
-	drop
+    drop
 }
 ```
 
