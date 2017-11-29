@@ -4,7 +4,7 @@ title:  Introducing NaCl
 author: annika
 date:   2017-11-29 10:00:42 +0200
 categories: [feature]
-hero: /assets/img/posts/very-fluffy-squirrel.jpg
+hero: /assets/img/posts/squirrel-493790_640.jpg
 author-image: /assets/img/authors/annika.jpg
 summary: "Live update allows you to upgrade IncludeOS applications without downtime"
 ---
@@ -15,7 +15,7 @@ A fundamental characteristic of unikernels is the lack of distinction between co
 
 In every sophisticated piece of software, there is a base pattern, a way of solving challenges that feel native to the software. When adding a new component, you should strive to create something that feels native to the rest of the system. You should adhere to the character of the software. For Unikernels, this base pattern is that everything is code. And as such, we should try to express everything, even the configuration, as code.
 
-There is a performance motivation for expressing configuration through code in addition to usability aspect. You get to run the source through the compiler and the linker. Modern compilers/linkers are amazing pieces of software, and many skilled people have spent tens of thousands of hours working on them and optimizing them. If we can leverage this, we should. 
+There is a performance motivation for expressing configuration through code, in addition to usability aspect. You get to run the source through the compiler and the linker. Modern compilers/linkers are amazing pieces of software, and many skilled people have spent tens of thousands of hours working on them and optimizing them. If we can leverage this, we should. 
 
 Back to firewalls. We started looking at various firewall implementations. Overall it seems they ingest rules and then create linked lists in memory. Then, when a packet comes along, it's passed through these chains of rules and evaluated. Each rule can have an action associated with it, and if the rule evaluates to true, it is executed. It’s a classic state machine, and we can likely create something faster and more flexible.
 
