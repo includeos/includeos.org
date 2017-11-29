@@ -89,10 +89,10 @@ Filter::TCP {
     if (ip.daddr == eth0.address and tcp.dport == 80) {
         log(“Accepting TCP packet with destination address ”, ip.daddr, “ and destination port ”, tcp.dport, “\n”)
         accept
-		}
-	}
+        }
+    }
     log(“Default verdict: Dropping packet\n”)
-	drop
+    drop
 }
 ```
 
@@ -121,14 +121,14 @@ You can also create a list of ports that you want to accept traffic to and a lis
 ```
 my_ports: [
     80,
-	1010-1030,
-	my_port
+    1010-1030,
+    my_port
 ]
 
 my_addrs [
     eth0.gateway,
-	10.0.0.50-10.0.0.60,
-	140.10.20.0/24
+    10.0.0.50-10.0.0.60,
+    140.10.20.0/24
 ]
 ```
 
@@ -138,7 +138,7 @@ And then create a TCP Filter that contains this rule:
 Filter::TCP my_tcp_filter {
     if (ip.saddr in my_addrs and tcp.dport in my_ports) {
         accept
-	}
+    }
 }
 ```
 
@@ -151,11 +151,11 @@ Filter::IP my_filter {
     if (ct.state == established) {
         log(“Connection tracking state == established: Accepting\n”)
         accept
-	}
+    }
 
     my_tcp_filter()
     log(“Default verdict: Dropping packet\n”)
-	drop
+    drop
 }
 ```
 
