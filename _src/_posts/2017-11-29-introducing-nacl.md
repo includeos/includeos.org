@@ -6,7 +6,7 @@ date:   2017-11-29 10:00:42 +0200
 categories: [feature]
 hero: /assets/img/posts/squirrel-493790_640.jpg
 author-image: /assets/img/authors/annika.jpg
-summary: "Live update allows you to upgrade IncludeOS applications without downtime"
+summary: "NaCl is configuration language for IncludeOS that allows you to express firewall rules in a easy and efficient manner."
 ---
 
 IncludeOS now has a routing firewall built into it. It is, like everything else we do, implemented in C++. Initially, we thought we would write firewall and routing rules in C++. Writing code isn’t ideal, however, as people aren’t interested in programming C++ just to open a port or allow a new host access to the network. We needed a level of abstraction to provide some ease of use to our product. So, how do you define a new language for configuring a unikernel firewall?
@@ -18,6 +18,8 @@ In every sophisticated piece of software, there is a base pattern, a way of solv
 There is a performance motivation for expressing configuration through code, in addition to usability aspect. You get to run the source through the compiler and the linker. Modern compilers/linkers are amazing pieces of software, and many skilled people have spent tens of thousands of hours working on them and optimizing them. If we can leverage this, we should. 
 
 Back to firewalls. We started looking at various firewall implementations. Overall it seems they ingest rules and then create linked lists in memory. Then, when a packet comes along, it's passed through these chains of rules and evaluated. Each rule can have an action associated with it, and if the rule evaluates to true, it is executed. It’s a classic state machine, and we can likely create something faster and more flexible.
+
+![Traditional firewall process]({{site-url}}/assets/img/posts/firewall-trans.png)
 
 So, instead of looking to FreeBSD or Linux and try to mimic their firewall code, we decided to use a transpiler. We let the user define the firewall in an accessible, high-level language, and then we’ll take this code, transpile it to C++, compile the resulting C++ and link it into the binary. This technique has been shown to be successful in how [Varnish Cache] handles its configuration language, [VCL].
 
