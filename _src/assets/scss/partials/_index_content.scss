@@ -90,7 +90,13 @@ section.last {
       height: auto;
       width: auto;
   }
+  a {
+    color: $blue;
+    text-decoration: underline;
+  }
 }
+
+
 
 .last, .middle, .top {
   h2 {

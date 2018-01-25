@@ -80,6 +80,7 @@
         <pre><code class="bash">git clone "https://github.com/hioa-cs/IncludeOS.git"
 cd IncludeOS
 export INCLUDEOS_PREFIX=~/IncludeOS_install
+export PATH=$PATH:$INCLUDEOS_PREFIX/bin
 ./install.sh</code></pre>
         <p>For detailed instructions see <a href="/get-started.html">get started</a>. Once installed have a look in IncludeOS/examples/demo_service. In order to boot the application just type "sudo boot --create-bridge ." and the application should build and run.</p>
         <p>We strive to make it easy to create fast and useful services. The below code will set up a simple TCP echo service and happily talk to anyone connecting.</p>
@@ -126,8 +127,19 @@ The network configuration of the virtual machine can reside in a JSON file, name
     </div> -->
   </div>
 </section>
-<!--
 <section id="last" class="last flex-child-auto">
+  <div class="row">
+     <div class="small-12 large-12 column">
+      <h2>Security</h2>
+
+      <div class="small-12 large-8">
+      <p>For security related inquires please send email to security@includeos.org. You can use our <a href="https://pgp.mit.edu/pks/lookup?search=security@includeos.org&op=index">PGP key</a> to encrypt the email.
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+<!--
   <div class="row align-middle align-center text-center">
     <div class="small-12 column">
       <h2>Major contributions to IncludeOS by these fine folks:</h2>
@@ -145,3 +157,5 @@ The network configuration of the virtual machine can reside in a JSON file, name
   </div>
 -->
 </section>
+
+
