@@ -10,7 +10,7 @@ partial:
 	gsutil -m rsync -r -x ^assets/ _dest/ gs://www.includeos.org/
 
 rebuild:
-	rm -r _dest
+	rm -rf _dest
 	npm run build
 
 build:
