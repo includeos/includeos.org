@@ -52,3 +52,6 @@ composer.lock
 
 # Build folder
 _dest
+
+# Vim
+*.swp
