@@ -6,7 +6,7 @@ permalink: /get-started.html
 summary: "Installing and compiling IncludeOS."
 ---
 
-Installing IncludeOS on a Mac or Linux computer is relativly straight forward. It does require a few libraries and a compiler. Once installed you can build and launch IncludeOS application locally.
+Installing IncludeOS on a Mac or Linux computer is relatively straightforward. It does require a few libraries and a compiler. Once installed you can build and launch IncludeOS applications locally.
 
 ### Set custom location and compiler
 
