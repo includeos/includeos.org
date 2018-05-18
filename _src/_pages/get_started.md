@@ -25,7 +25,7 @@ This will also crucially make the boot program visible globally, so that you can
 
 ### Install libraries
 
-If you want to install IncludeOS on Mac OS you'll need a working installation of [brew] so the install script can install its dependencies.
+If you want to install IncludeOS on Mac OS you'll need a working installation of [Homebrew](https://brew.sh/) so the install script can install its dependencies.
 
 **NOTE:** The script will install packages.
 
@@ -49,7 +49,7 @@ Configuration of your IncludeOS installation can be done inside `build/` with `c
 
 ### Testing the installation
 
-A successful setup enables you to build and run a virtual machine. There are a few demonstration services in the source folder. If you look in the `examples/` folder you see these. If you enter `demo_service` and type `boot --create-bridge .` this script will build the service and boot it using [qemu].
+A successful setup enables you to build and run a virtual machine. There are a few demonstration services in the source folder. If you look in the `examples/` folder you see these. If you enter `demo_service` and type `boot --create-bridge .` this script will build the service and boot it using [qemu](https://www.qemu.org/).
 
 ```
     $ cd examples/demo_service
