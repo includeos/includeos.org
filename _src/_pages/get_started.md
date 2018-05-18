@@ -10,18 +10,18 @@ Installing IncludeOS on a Mac or Linux computer is relatively straightforward. I
 
 ### Set custom location and compiler
 
-By default the project is installed to /usr/local/includeos.
+By default the project is installed to `/usr/local/includeos`.
 
-However, it is recommended to choose a custom location as well as select the compiler we want clang to find. In this document we assume you install IncludeOS in your home directory, in the folder ~/includeos.
+However, it is recommended to choose a custom location as well as select the compiler we want clang to find. In this document we assume you install IncludeOS in your home directory, in the folder `~/includeos`.
 
-To do this we can edit ~/.bash_profile (mac os) or ~/.bashrc (linux), adding these lines at the end of the file:
+To do this we can edit `~/.bash_profile` (mac os) or `~/.bashrc` (linux), adding these lines at the end of the file:
 
 ```
     export INCLUDEOS_PREFIX=~/includeos/
     export PATH=$PATH:$INCLUDEOS_PREFIX/bin
 ```
 
-This will also crucially make the boot program visible globally, so that you can simply run ```boot <myservice>``` inside any service folder.
+This will also crucially make the boot program visible globally, so that you can simply run `boot <myservice>` inside any service folder.
 
 ### Install libraries
 
@@ -62,8 +62,8 @@ More information is [available on the wiki](https://github.com/hioa-cs/IncludeOS
 
 ### Writing your first service
 
-1. Copy the [./seed/service](./seed/service) directory to a convenient location like `~/your_service`. Then, just start implementing the `Service::start` function in the `Service` class, located in [your_service/service.cpp](./seed/service/service.cpp) (very simple example provided). This function will be called once the OS is up and running.
-2. Update the [CMakeLists.txt](./seed/service/CMakeLists.txt) to specify the name of your project, enable any needed drivers or plugins, etc.
+1. Copy the `seed/service` directory to a convenient location like `~/your_service`. Then, just start implementing the `Service::start` function in the `Service` class, located in `your_service/service.cpp` (very simple example provided). This function will be called once the OS is up and running.
+2. Update the `your_service/CMakeLists.txt` to specify the name of your project, enable any needed drivers or plugins, etc.
 
 **Example:**
 
@@ -78,4 +78,4 @@ More information is [available on the wiki](https://github.com/hioa-cs/IncludeOS
     $ boot my_service
 ```
 
-Take a look at the [examples](./examples) and the [tests](./test). These all started out as copies of the same seed.
+Take a look at the examples and tests in the `examples` and `tests` directories. These all started out as copies of the same seed.
