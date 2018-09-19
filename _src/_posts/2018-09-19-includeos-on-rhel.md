@@ -5,7 +5,7 @@ author: taiyeba
 date:   2018-09-19 16:00:00 +0200
 categories: [platforms, rhel, centos]
 hero: /assets/img/posts/squirrel_mana.jpg
-author-image:
+author-image: /assets/img/authors/taiyeba.jpg
 summary: "Getting IncludeOS up and Running on Rhel"
 ---
 
