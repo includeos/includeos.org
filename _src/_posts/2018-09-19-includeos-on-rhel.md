@@ -2,7 +2,7 @@
 layout: post
 title: Getting IncludeOS up and running on RHEL
 author: taiyeba
-date:   2018-09-19 0:08:00 +0200
+date:   2018-09-20 0:08:00 +0200
 categories: [platforms, rhel, centos]
 hero: /assets/img/posts/Redhat-logo.jpg
 author-image: /assets/img/authors/taiyeba.jpg
