@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Getting IncludeOS up and running on Rhel
+title: Getting IncludeOS up and running on RHEL
 author: taiyeba
-date:   2018-09-19 16:00:00 +0200
+date:   2018-09-19 0:08:00 +0200
 categories: [platforms, rhel, centos]
-hero: /assets/img/posts/squirrel_mana.jpg
+hero: /assets/img/posts/Redhat-logo.jpg
 author-image: /assets/img/authors/taiyeba.jpg
-summary: "Getting IncludeOS up and Running on Rhel"
+summary: "Getting IncludeOS up and Running on RHEL 7"
 ---
 
-Let’s talk about getting IncludeOS up and running on Rhel systems. Currently IncludeOS builds quite smoothly on Debian, Ubuntu and MacOS. However there has been some challenges in building IncludeOS on RHEL. Basically as Per mentions after several attempts, there are quite a  few dependencies that are hard to resolve on RHEL as opposed to other systems. But let’s admit, nothing is impossible and we as a team are looking into making it simpler in the future.
+Let’s talk about getting IncludeOS up and running on RHEL systems. Currently IncludeOS builds quite smoothly on Debian, Ubuntu and MacOS. However there has been some challenges in building IncludeOS on RHEL. Basically as Per mentions after several attempts, there are quite a  few dependencies that are hard to resolve on RHEL as opposed to other systems. But let’s admit, nothing is impossible and we as a team are looking into making it simpler in the future.
 
-At the moment our solution for Rhel is to deploy the whole development environment into a Docker container and use it to build IncludeOS as an image. We have done it for our commercial customers as it makes it possible to run on any platforms that support docker (not tested on Docker for Windows).
+At the moment our solution for RHEL 7 is to deploy the whole build environment into a Docker container and use it to build IncludeOS as an image. We have done it for our commercial customers as it makes it possible to run on any platforms that support docker (not tested on Docker for Windows).
 
 ## A Simple C++ program
 
@@ -21,14 +21,14 @@ Our goal will be to compile and boot _**a simple C++ program**_:
  #include <os>
 
 int main() {
- printf("Finding IncludeOS on Rhel \n");
+ printf("Finding IncludeOS on RHEL \n");
 }
 
 ```
 
 Let’s start of by creating a folder for your service:
 
-```
+```bash
 mkdir my-awesome-service
 cd my-awesome-service
 vi service.cpp
@@ -48,7 +48,7 @@ To install docker, follow the [official docker guide](https://docs.docker.com/in
 
 * Start by adding the docker repo to your package manager:
 
-```
+```bash
 sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
@@ -56,7 +56,7 @@ sudo yum-config-manager \
 
 * Let’s get the prerequisites needed by Docker:
 
-```
+```bash
 sudo yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
@@ -78,13 +78,13 @@ In this demonstration we plan to use QEMU as the hypervisor, therefore you will 
 
 * So to add the EPEL repo:
 
-```
+```bash
 sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
 * Installing QEMU:
 
-```
+```bash
 sudo yum install qemu-system-x86
 ```
 
@@ -103,7 +103,7 @@ Now you are ready to start a Docker container. You can view a list of the Includ
 For this demonstration we will build the latest tag we have, `dev-v0.12.1-rc.7.1`.
 Now one can run the following command from the service directory:
 
-```
+```bash
 docker run --user $(id -u):$(id -g) --rm -v $PWD:/service includeos/build:dev-v0.12.1-rc.7.1
 ```
 
