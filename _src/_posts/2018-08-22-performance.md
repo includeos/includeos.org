@@ -6,7 +6,7 @@ date:   2018-09-18 06:00:42 +0200
 categories: [performance, guest post]
 hero: /assets/img/posts/cheetah-425468_640.jpg
 author-image: /assets/img/authors/tobias.jpg
-summary: "A performance analysis of IncludeOS' firewalling capabilites"
+summary: "A performance analysis of IncludeOS' firewalling capabilites compared with Linux Netfilter and NFTables."
 ---
 
 IncludeOS is a novel operating system. As opposed to the traditional way of having applications interact with the operating system through system calls the application itself gets operating system functionality made available to it as function calls. So, one could say that there is no longer an operating system running beneath the application. The application *is* the operating system.
@@ -73,7 +73,7 @@ Similar behaviour can be observed in Linux as well. As the Linux kernels moves f
 
 ## A note about performance
 
-The IncludeOS developers tell me that there has been little effort put into performance. All the performance benefits we’ve seen to date have been due the macro architecture of IncludeOS. So there is likely that performance could be elevated further with relatively little efforts. In addition to changes made to the source code there are also optimizations that could be made on the compiler og linked stages. Link time optimization, LTO, can by itself increase performance further, when enabled. I don’t wish to speculate to what extent this will increase performance however, further measurements will need to be conducted when LTO is in place.
+The IncludeOS developers tell me that there has been little effort put into performance. All the performance benefits we’ve seen to date have been due the macro architecture of IncludeOS. So there is likely that performance could be elevated further with relatively little efforts. In addition to changes made to the source code there are also optimizations that could be made on the compiler linked stages. Link time optimization, LTO, can by itself increase performance further, when enabled. I don’t wish to speculate to what extent this will increase performance however, further measurements will need to be conducted when LTO is in place.
 
 ## Conclusion
 
