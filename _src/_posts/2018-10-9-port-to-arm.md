@@ -9,7 +9,7 @@ author-image: /assets/img/authors/perbu.jpg
 summary: "Linux is unsuited for embedded development. We're porting IncludeOS to ARM."
 ---
 
-One of the apparent trends we see in the world today is the increasing use of Linux as an embedded operating system. As just about everyone and their dog is starting to ship IoT devices a familiar operating systems help accelerate development.
+One of the apparent trends we see in the world today is the increasing use of Linux as an embedded operating system. As just about everyone and their dog is starting to ship IoT devices a familiar operating system help accelerate development.
 
 It is our opinion that Linux isn't suited for embedded use. There are quite a few problems with it. Here are a handful of reasons we believe Linux is far less than perfect for embedded use.
 
@@ -29,11 +29,9 @@ IncludeOS has no user or administrator concept. The OS doesn't have any function
 
 ## Linux is slow and unpredictable.
 
-Linux isn't built for real-time applications. It's built to distribute a limited set of computing resources fairly between competing users and processes. It is supposed to handle and an overcommitment of resources in a graceful manner.
+Linux isn't built for real-time applications. It's built to distribute a limited set of computing resources fairly between competing users and processes. Responding in microseconds to external impulses isn't a thing Linux does well. And often, responding in just a few microseconds, is essential when dealing with embedded systems. 
 
-Responding in microseconds to external impulses isn't a thing Linux does well. And often, responding in just a few microseconds, is essential when dealing with embedded systems. 
-
-IncludeOS doesn't support process scheduling. So, when we are in our superloop, the moment an interrupt arrives, we can respond to it immediately. So we know we can provide a system that provides very strong real-time capabilities. We can also provide stronger guarantees that invoking the OS will predictable. 
+IncludeOS doesn't support process scheduling. So, when we are in our superloop, the moment an interrupt arrives, we can respond to it immediately. So we know we can provide a system that provides very strong real-time capabilities. We can also provide stronger guarantees that invoking the OS will be predictable. 
 
 ## Fine. Linux isn't ideal. What are we going to do about it?
 
@@ -43,7 +41,7 @@ Then we'll start working on actually booting on ARM. The first target and our re
 
 Once we boot on the Raspberry, we'll start adding support for the buses and peripherals it has. Our old friend the PCI bus is there and shouldn't cause too much trouble, but quite a bit of the hardware, including the Wifi chip, is connected through the USB Host Controller. So USB support will have to go into IncludeOS.
 
-This will likely keep us busy for quite some time. We'll continue to work on our Network Function Support and we have a few features lined up development in 2019.
+This will likely keep us busy for quite some time. We'll continue to work on our Network Function Support and we have a few features lined up for development in 2019.
 
 ## What is the use-case?
 
