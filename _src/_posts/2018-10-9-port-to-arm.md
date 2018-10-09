@@ -2,9 +2,9 @@
 layout: post
 title: We're porting IncludeOS to ARM64
 author: perbu
-date:   2018-09-18 06:00:42 +0200
+date:   2018-10-09 06:00:42 +0200
 categories: [arm, hardware]
-hero: /assets/img/posts/12321.jpg
+hero: /assets/img/posts/raspberry-2635886_1920.jpg
 author-image: /assets/img/authors/perbu.jpg
 summary: "Linux is unsuited for embedded development. We're porting IncludeOS to ARM."
 ---
