@@ -41,7 +41,7 @@ We're going to port IncludeOS to ARM. More specifically, we'll be supporting a f
 
 Then we'll start working on actually booting on ARM. The first target and our reference platform is the Raspberry Pi 3 Model B+. This is a 1.6Ghz, quad-core, 64 bit SoC with a Mali GPU, Ethernet, Wifi, Bluetooth and a host of GPIO pins. The price point is low, it is available all over the world and it is the default prototyping platform for Cortex-A development. I've been told the boot process is "interesting", but far from impossible to support.
 
-Once we boot on the Raspberry, we'll start adding support for the buses and peripherals it has. Our old friend the PCI bus is there and shouldn't cause too much trouble, but quite a bit of the hardware, including the Wifi chip, is connected through the USB Host Controller. So USB support will have to go into IncludeOS.
+Once we boot on the Raspberry, we'll start adding support for the buses and peripherals it has. The peripherals are connected through the SDIO and the USB busses. So a solid USB implementation will have to go into IncludeOS, something we haven't needed until now.
 
 This will likely keep us busy for quite some time. We'll continue to work on our Network Function Support and we have a few features lined up for development in 2019.
 
@@ -54,7 +54,7 @@ In general I think we can define the use-case to everything that currently runs 
 
 ## What about RISC-V?
 
-One of the outcomes of us supporting ARM is the creation of a hardware adstraction layer (HAL). Everything that isn't cross-platform will be put into the HAL and this will make it easiser to support other archtectures down the line.
+One of the outcomes of us supporting ARM is the creation of a hardware abstraction layer (HAL). Everything that isn't cross-platform will be put into the HAL and this will make it easiser to support other archtectures down the line.
 
 ## Who are supporting this effort?
 
@@ -67,6 +67,8 @@ Our goal is that we should be able to provide basic support for the Raspberry Pi
 ## Are you interested in using, piloting, testing or helping bring IncludeOS to your favorite ARM64 SoC?
 
 I'm perbu@includeos.org. I'm interested to hear what you think.
+
+*Edited 2018-10-10, turns out the Raspberry Pi 3 Model b+ doesn't have a PCI bus internally. Huh.*
 
 [musl libc]: https://www.musl-libc.org/
 [LiveUpdate]: /blog/2017/liveupdate.html
