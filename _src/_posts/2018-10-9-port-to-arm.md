@@ -39,6 +39,9 @@ IncludeOS doesn't support process scheduling. So, when we are in our event loop,
 
 We're going to port IncludeOS to ARM. More specifically, we'll be supporting a few ARM64-based SoCs and gradually expand our support. We're starting in January 2019. The first effort is making sure that all our libraries can be compiled and run on ARM64. We'll be making sure that you can build and run your application on Linux on ARM64.
 
+
+![Raspberry Pi 3 Model b+](/assets/img/posts/device-3438525_1280.jpg)
+
 Then we'll start working on actually booting on ARM. The first target and our reference platform is the Raspberry Pi 3 Model B+. This is a 1.6Ghz, quad-core, 64 bit SoC with a Mali GPU, Ethernet, Wifi, Bluetooth and a host of GPIO pins. The price point is low, it is available all over the world and it is the default prototyping platform for Cortex-A development. I've been told the boot process is "interesting", but far from impossible to support.
 
 Once we boot on the Raspberry, we'll start adding support for the buses and peripherals it has. The peripherals are connected through the SDIO and the USB busses. So a solid USB implementation will have to go into IncludeOS, something we haven't needed until now.
