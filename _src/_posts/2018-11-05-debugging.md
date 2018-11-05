@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Developing and debugging IncludeOS applications"
-author: alf
+author: alfred
 date:   2018-11-05 07:43:42 +0200
 categories: [development,debugging,profiling]
 hero: /assets/img/posts/aphids.jpg
