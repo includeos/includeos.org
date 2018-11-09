@@ -49,9 +49,14 @@
   }
 
   a {
+
+    text-decoration: underline;
+    color: $blue;
+
     &:hover {
       color: black;
     }
+
   }
 
   h2 {
