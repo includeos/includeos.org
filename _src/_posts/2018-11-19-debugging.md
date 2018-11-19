@@ -30,7 +30,7 @@ So while all of your application code and most of the IncludeOS code can be debu
 
 ![Fly, a very common bug](/assets/img/posts/fly.jpg)
 
-## Debugging IncludeOS virtual machine with gdb
+## Debugging a IncludeOS virtual machine with gdb
 
 Debugging binaries running in virtual machines has been done for a long time. It works just like other types of remote debugging, such as on an embedded device or on a remote server, by having the program host communicate over some networking protocol instead of trapping directly to the debugger process whenever you hit a breakpoint. gdb is one example of a debugger that can do this, and once you have it set up debugging a running IncludeOS service inside a virtual machine is exactly like debugging any other program. You'll be able to single-step through your code, inspect the value of local variables, inspect stack frames and registers (or modify them) and everything else as you go, with GUI assistance if you prefer.
 
@@ -62,7 +62,7 @@ The service will now run until it hits any of the breakpoints set in gdb
 ## Details
 ### Compiling with the debug option
 
-I recommend installing ccmake, which gives you a terminal friendly GUI for enabling cmake options. To build IncludeOS itself with debug options enabled after having installed using install.sh, go to ```your/IncludeOS/build_x86_64/``` and do ```ccmake ...``` Type c to toggle debug, then type g to generate and q to quit. Now e.g. make -j24 install will recompile and install using the same build parameters as before.
+I recommend installing ccmake, which gives you a terminal friendly GUI for enabling cmake options. To build IncludeOS itself with debug options enabled after having installed using install.sh, go to ```your/IncludeOS/build_x86_64/``` and do ```ccmake ...``` Type c to toggle debug, then type g to generate and q to quit. Now e.g. ```make -j24 install``` will recompile and install using the same build parameters as before.
 
 Enabling debugging for IncludeOS is necessary if you want to single-step through IncludeOS source code and not just your application code, but is otherwise optional. What you have to do in order to allow gdb to understand your binary is to compile your actual service with the debug option.
 
