@@ -54,9 +54,11 @@ IncludeOS can outperform a general purpose operating system due to two different
 
 An IncludeOS system is compiled and optimized as a whole. The optimizers, both in the compiler and linker stages, see more of what the whole system is doing and has the potential to optimize further. 
 
-## Real-time characteristics
+## Low latency characteristics
 
-There is no process preemption in IncludeOS. The operating system is pretty static in its behavior, so as long as the machine itself is predictable, the latency and jitter are predictable as well. So on bare metal hardware, IncludeOS can be considered a real-time operating system.
+There is currently no process preemption in IncludeOS. The operating system is pretty static in its behavior, so as long as the machine itself is predictable, the latency and jitter are perfectly predictable as well. So on bare metal hardware, IncludeOS can be considered a low latency, predictable operating system.
+
+We're looking into implementing pre-emptive threads with priorities for real-time applications.
 
 ## Developing and debugging IncludeOS
 
@@ -76,11 +78,12 @@ So how can this be applied? How can this be useful?
 
 ## Virtual Networking Appliances
 
-We've successfully deployed IncludeOS as firewall- and load balancingers. The modular IP stack and flexible configuration language, [NaCl], allows for small, fast and secure virtual appliances that can help secure your virtualized network.
+We've successfully deployed IncludeOS as firewall- and loalbalancers. The modular IP stack and flexible configuration language, [NaCl], allows for small, fast and secure virtual appliances that can help secure your virtualized network.
 
 [Performance, compared to Linux, is excellent](/blog/2018/performance.html). Specifically, we performance being very well kept us as the number of firewall rules increase as the compiler does an excellent job at optimizing the ruleset.
 
 ![Raspberry Pi]({{site-url}}/assets/img/raspberry-device.jpg){: .align-right}
+
 
 ## IoT devices
 
@@ -94,9 +97,11 @@ The blog post announcing the port to ARM is available [here](https://www.include
 
 The rise of serverless platforms presents an exciting opportunity for IncludeOS. Putting the application code into IncludeOS can provide a dramatically shorter response time when coming from a “cold” situation. The ["Unikernels as processes"](https://dl.acm.org/citation.cfm?id=3267845) article referenced below shows how Unikernels could be used to implement a FaaS architecture. FaaS applications are predefined ahead of execution, so there is a natural fit between FaaS and IncludeOS. Support for Node.js would be needed, and we expect Node support to arrive in 2019.
 
+The advantage would be stronger isolation between the FaaS workload and the host, dramatically shorter cold starts and higher density.
+
 # How about Containers?
 
-While there might be some workload that currently runs on containers that could be moved to IncludeOS the differences between a container platform like Docker and IncludeOS are just too big. Containers are very, very generic and IncludeOS is, by design, very specific. So we don't expect IncludeOS to kill off Docker anytime soon.
+While there might be some workload that currently runs on containers that could be moved to IncludeOS, the differences between a container platform like Docker and IncludeOS are just too big. Containers are very, very generic and IncludeOS is, by design, very specific. So we don't expect IncludeOS to kill off Docker anytime soon.
 
 # Further reading
 
