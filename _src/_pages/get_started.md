@@ -30,7 +30,7 @@ If you want to install IncludeOS on Mac OS you'll need a working installation of
 **NOTE:** The script will install packages.
 
 ```
-    $ git clone "https://github.com/hioa-cs/IncludeOS"
+    $ git clone "https://github.com/includeos/IncludeOS"
     $ cd IncludeOS
     $ ./install.sh
 ```
