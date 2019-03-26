@@ -80,7 +80,7 @@ So how can this be applied? How can this be useful?
 
 We've successfully deployed IncludeOS as firewall- and loalbalancers. The modular IP stack and flexible configuration language, [NaCl], allows for small, fast and secure virtual appliances that can help secure your virtualized network.
 
-[Performance, compared to Linux, is excellent](/blog/2018/performance.html). Specifically, we performance being very well kept us as the number of firewall rules increase as the compiler does an excellent job at optimizing the ruleset.
+[Performance, compared to Linux, is excellent](/blog/2018/performance.html). Specifically, we saw performance being very well kept us as the number of firewall rules increase with only a marginal slowdown manifesting itself on very complex rulessets. The compiler does an excellent job at optimizing the ruleset.
 
 ![Raspberry Pi]({{site-url}}/assets/img/raspberry-device.jpg){: .align-right}
 
