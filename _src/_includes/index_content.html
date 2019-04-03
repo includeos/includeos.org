@@ -9,9 +9,9 @@
       <p>IncludeOS applications boot in tens of milliseconds and require only a few megabytes of disk and memory. </p>
       <div class="row">
         <div class="stacked-for-small button-group">
-          <a class="primary hollow button" href="https://github.com/includeos/IncludeOS">VIEW ON GITHUB</a>          
-          <a class="primary hollow button" href="https://goo.gl/NXBVsc">CHAT ON SLACK</a>          
-          <a class="primary hollow button" href="/technology.html">TELL ME MORE</a>          
+          <a class="primary hollow button" href="https://github.com/includeos/IncludeOS">VIEW ON GITHUB</a>
+          <a class="primary hollow button" href="https://goo.gl/NXBVsc">CHAT ON SLACK</a>
+          <a class="primary hollow button" href="/technology.html">TELL ME MORE</a>
         </div>
       </div>
     </div>
@@ -75,33 +75,57 @@
       <h2>Get started</h2>
 
       <div class="small-12 large-8">
-      <p>Installing IncludeOS on Linux or macOS typically takes around 10 minutes. Once installed
-       we suggest looking at and booting a few of the examples to familarize yourself with the system.
-      </p>
-        <pre><code class="bash">git clone "https://github.com/includeos/IncludeOS.git"
-cd IncludeOS
-export INCLUDEOS_PREFIX=~/IncludeOS_install
-export PATH=$PATH:$INCLUDEOS_PREFIX/bin
-./install.sh</code></pre>
-        <p>For detailed instructions see <a href="/get-started.html">get started</a>. Once installed have a look in IncludeOS/examples/demo_service. In order to boot the application just type "sudo boot --create-bridge ." and the application should build and run.</p>
-        <p>We strive to make it easy to create fast and useful services. The below code will set up a simple TCP echo service and happily talk to anyone connecting.</p>
+      <p>To run a service with IncludeOS on Linux or macOS you do not need to install IncludeOS, however you need to install a few dependencies depending on the service you will run. You can start by trying out  our simplest hello_world service. For this service you will need the following dependencies.
+        <ul type = "circle">
+       <li><a href="https://docs.conan.io/en/latest/installation.html">conan package manager</a></li>
+       <li>psutil</li>
+       <li>qemu</li>
+     </ul>
+     </p>
+     <p>With the above dependencies you should be able to build an application within 10 minutes.
+        <pre><code class="bash">$ conan config install https://github.com/includeos/conan_config.git
+$ git clone https://github.com/includeos/hello_world.git
+$ mkdir build_hello_world
+$ cd build_hello_world
+$ conan install ../hello_world -pr <your_conan_profile>
+$ source ./activate.sh
+$ cmake ../hello_world
+$ cmake --build .
+$ boot hello
+        </code></pre>
+
+        The hello world booted service should look like this:
+        <pre><code>
+================================================================================
+ IncludeOS 0.14.1-1093 (x86_64 / 64-bit)
+ +--> Running [ Hello world - OS included ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hello world
+    [ main ] returned with status 0
+    </code></pre>
+    </p>
+    <p>For detailed instructions see <a href="/get-started.html">get started</a>.
+    Once installed we suggest looking at and booting a few of the <a href="https://github.com/includeos/demo-examples">demo-examples</a> to familarize yourself with the system. Check out our demo running <a href="https://github.com/includeos/demo-examples/tree/master/acorn"> demo-examples/acron</a> on <a href="http://demo6.includeos.org/">demo6.includeos.org</a>. You start by building the <a href="https://github.com/includeos/demo-examples/tree/master/demo_service"> demo-examples/demo_service</a>. 
+    </p>
+    <p>We strive to make it easy to create fast and useful services. The below code will set up a simple TCP echo service and happily talk to anyone connecting.
+    </p>
         <pre><code class="c++">#include &lt;os&gt;
 #include &lt;iostream&gt;
-#include &lt;net/inet4&gt;
+#include &lt;net/interfaces&gt;
 
 void Service::start()
 {
   // Get the IP stack thats already been automatically configured
-  auto&amp; inet = net::Super_stack::get&lt;net::IP4&gt;(0);
+  auto& inet = net::Interfaces::get(0);
   // Setup a TCP echo server on port 7 (echo port)
-  auto&amp; server = inet.tcp().listen(7); 
+  auto& server = inet.tcp().listen(7);
 
   server.on_connect([] (auto conn) {
     // Log incomming connections on the console:
-    std::cout &lt;&lt; &quot;Connection &quot; &lt;&lt; conn-&gt;to_string() &lt;&lt; &quot; established\n&quot;;
+    std::cout << "Connection " << conn->to_string() << " established\n";
     // When data is received, echo back
-    conn-&gt;on_read(1024, [conn] (auto buf) {
-      conn-&gt;write(buf);
+    conn->on_read(1024, [conn] (auto buf) {
+      conn->write(buf);
     });
   });
 }</code></pre>
@@ -119,6 +143,10 @@ The network configuration of the virtual machine can reside in a JSON file, name
   ]
 }
 </code></pre>
+
+<p>For more advanced  examples, have a look at the demo-examples, try <a href="https://github.com/includeos/demo-examples/tree/master/tcp">demo-examples/tcp</a>.
+
+</p>
     </div>
     </div>
   </div>
@@ -158,5 +186,3 @@ The network configuration of the virtual machine can reside in a JSON file, name
   </div>
 -->
 </section>
-
-

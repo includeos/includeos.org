@@ -13,34 +13,46 @@ Installing IncludeOS on a Mac or Linux computer is relatively straightforward. I
 Dependencies required for building IncludeOS services:
 * [Conan package manager](https://docs.conan.io/en/latest/installation.html)
 * CMake
-* Clang, or alternatively GCC on Linux
+* Clang 6.0, or alternatively GCC 7 on Linux
+* python 3
+* Nasm
+
+### Get bintray remote for IncludeOS Packages
+
+We have set up a repository ([includeos/conan_config](https://github.com/includeos/conan_config)) that helps IncludeOS users configure all the necessary conan settings. This will add our pacakge remote in your conan remotes and also installs all the profiles we have in the repository.
+
+```
+  conan config install https://github.com/includeos/conan_config.git
+```
 
 ### Build and Run IncludeOS
 
-Let's start with our [hello world demo service](https://github.com/includeos/hello_world) as a starting point for developing IncludeOS services. Once all the dependencies are built, choose an appropriate
-[profile](https://github.com/includeos/conan_config/tree/master/profiles) based your build system.
+Let's start with our [hello world demo service](https://github.com/includeos/hello_world) as a starting point for developing IncludeOS services. For building services you will require a few other dependnecies based on what service you are running. To run this example you need to ensure you have:
+* qemu
+* python dependencies `jsonschema, psutil`
 
-> NOTE: Use `activate.sh` to activate necessary service requirements and `deactivate.sh` to return to previous environment settings.
+Once all the dependencies are built, choose an appropriate
+[profile](https://github.com/includeos/conan_config/tree/master/profiles) based your build system.
 
 ```
   $ git clone https://github.com/includeos/hello_world.git
   $ mkdir hello_world_build
   $ cd hello_world_build
   $ conan install <path-to-hello-world>/hello_world -pr <your_conan_profile>
-  $ source ./activate.sh
+  $ source activate.sh
   $ cmake ../hello_world
   $ cmake --build .
   $ boot hello
 ```
 This will also crucially make the boot program visible globally, so that you can simply run `boot <myservice>` inside any service folder.
 
+> NOTE: Use `source activate.sh` to activate necessary service requirements and `source deactivate.sh` to return to previous environment settings after using it.
+
 ### Special Requirement for MacOS
 
 If you want to install IncludeOS on Mac OS you'll need a working installation of [Homebrew](https://brew.sh/) so that one can install the required dependencies stated above.
 
 We are also working on developing a [homebrew formula](https://github.com/includeos/homebrew-includeos) which is currently experimental but feel free to try it out.
-
-
 
 ### Building and Starting a demo service
 
@@ -61,9 +73,11 @@ local conan cache they are downloaded and installed. If all the packages require
 are already in the local conan cache then it moves on to apply build requirements
 and generates the required virtualenv scripts and cmake information.
 
-Next to build the service do:
+Next to build the service,  a good practice is to always activate the service
+requirements and then build the service;
 
 ```
+  $ source activate.sh
   $ cmake ..
   $ cmake --build .
 
@@ -81,14 +95,7 @@ an executable file named `demo` which is now the service you will start.
 
 2. Start a service
 
-Now that you have all your build requirements ready, you can start the service. To start a service a good practice is to always activate the service
-requirements;
-
-```
-  $ source activate.sh
-```
-
-Now you can boot the demo service with `boot <service-name>`. This will build and run [this example service](https://github.com/includeos/demo-examples/blob/master/demo_service/service.cpp). You can visit the service on [http://10.0.0.42/](http://10.0.0.42/).
+Now that you have all your build requirements ready, you can boot the demo service with `boot <service-name>`. This will build and run [this example service](https://github.com/includeos/demo-examples/blob/master/demo_service/service.cpp). You can visit the service on [http://10.0.0.42/](http://10.0.0.42/).
 
 ```
   $ boot demo
