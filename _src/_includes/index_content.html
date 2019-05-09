@@ -75,14 +75,16 @@
       <h2>Get started</h2>
 
       <div class="small-12 large-8">
-      <p>To run a service with IncludeOS on Linux or macOS you do not need to install IncludeOS, however you need to install a few dependencies depending on the service you will run. You can start by trying out  our simplest hello_world service. For this service you will need the following dependencies.
-        <ul type = "circle">
-       <li><a href="https://docs.conan.io/en/latest/installation.html">conan package manager</a></li>
-       <li>psutil</li>
+      <p>To run a service with IncludeOS on Linux or macOS you do not need to install IncludeOS, however you need to install a few dependencies depending on the service you will run. You can start by trying out our simplest hello_world service. For this service you will need the following dependencies.
+      <ul type = "circle">
+       <li><a href="https://docs.conan.io/en/latest/installation.html">Conan package manager</a></li>
+       <li>cmake, make, nasm</li>
+       <li>clang, or alternatively gcc on linux. Prebuilt packages are available for clang 6.0 and gcc 7.3</li>
        <li>qemu</li>
+       <li>python3 packages: psutil, jsonschema</li>
      </ul>
      </p>
-     <p>With the above dependencies you should be able to build an application within 10 minutes.
+     <p>With the above dependencies you should be able to build an application within minutes.
         <pre><code class="bash">$ conan config install https://github.com/includeos/conan_config.git
 $ git clone https://github.com/includeos/hello_world.git
 $ mkdir build_hello_world
@@ -104,8 +106,8 @@ Hello world
     [ main ] returned with status 0
     </code></pre>
     </p>
-    <p>For detailed instructions see <a href="/get-started.html">get started</a>.
-    Once installed we suggest looking at and booting a few of the <a href="https://github.com/includeos/demo-examples">demo-examples</a> to familarize yourself with the system. Check out our demo running <a href="https://github.com/includeos/demo-examples/tree/master/acorn"> demo-examples/acron</a> on <a href="http://demo6.includeos.org/">demo6.includeos.org</a>. You start by building the <a href="https://github.com/includeos/demo-examples/tree/master/demo_service"> demo-examples/demo_service</a>.
+    <p>For detailed instructions see the <a href="https://github.com/includeos/IncludeOS/blob/master/README.md">GitHub README</a>.
+    Once installed we suggest looking at and booting a few of the <a href="https://github.com/includeos/demo-examples">demo-examples</a> to familarize yourself with the system.
     </p>
     <p>We strive to make it easy to create fast and useful services. The below code will set up a simple TCP echo service and happily talk to anyone connecting.
     </p>
@@ -143,8 +145,6 @@ The network configuration of the virtual machine can reside in a JSON file, name
   ]
 }
 </code></pre>
-
-<p>For more advanced  examples, have a look at the demo-examples, try <a href="https://github.com/includeos/demo-examples/tree/master/tcp">demo-examples/tcp</a>.
 
 </p>
     </div>
