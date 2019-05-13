@@ -133,7 +133,7 @@ The initial paper outlining the idea and architecture behind IncludeOS. The pape
 * Alfred Bratteruds presentation at Cppcon 2017, [Deconstructing the OS: The Devil is in the side effects](https://www.youtube.com/watch?v=h7D88U-5pKc)
 * Per Buer, [Running C++ applications without an operating system](https://www.youtube.com/watch?v=cQPrtTsM7Zg), a general introduction to IncludeOS for C++ developers delivered on NDC Techtown in 2018.
 * Jason Turner shows off his work on [retro graphics with IncludeOS](https://www.youtube.com/watch?v=HB__A7-tu2U) rendering Mandelbrot graphics.
-
+* Per Buer [Unikernels Aren’t Dead, They’re Just Not Containers](https://www.infoq.com/presentations/unikernels-includeos?), a general introduction to the Unikernel concept and experiences gathered from production deployments.
 
 If you would like to have your research or video mentioned here, please reach out to us.
 
